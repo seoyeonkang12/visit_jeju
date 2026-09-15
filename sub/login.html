@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=no">
+  <title>Visit_JeJu</title>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  
+  <script src="../js/header.js"></script>
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/login.css">
+  <link rel="stylesheet" href="../css/footer.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+<div class="body">
+  <input type="checkbox" id="search">
+  <input type="checkbox" id="chk_sun">
+  <input type="checkbox" id="chk_gnb">
+  <input type="checkbox" id="chk_lang">
+  <input type="checkbox" id="chk_size">
+
+  <div class="header_outer" id="top">
+    <header class="header">
+      <div class="logo_gnb">
+        <div class="logo"><a href="../index.html"><img src="../images/logo.png" alt="logo_img"></a></div>
+        <ul class="gnb">
+          <li><a href="./sub.html">제주놀멍</a></li>
+          <li><a href="#!">AI추천</a></li>
+          <li><a href="#!">K-pick</a></li>
+          <li><a href="#!">오름길</a></li>
+          <li><a href="#!">제주소식통</a></li>
+          <div class="gnb_menu">
+            <div class="menu_box">
+              <ul class="menu01">
+                <li><a href="./sub.html">지금 제주는</a></li>
+                <li><a href="#!">제주 관광지</a></li>
+                <li><a href="#!">음식</a></li>
+                <li><a href="#!">숙박</a></li>
+                <li><a href="#!">쇼핑</a></li>
+              </ul>
+              <ul class="menu02">
+                <li><a href="#!">추천 여행지</a></li>
+                <li><a href="#!">추천 코스</a></li>
+              </ul>
+              <ul class="menu03">
+                <li><a href="#!">Artist-pick</a></li>
+                <li><a href="#!">드라마 촬영지</a></li>
+              </ul>
+              <ul class="menu04">
+                <li><a href="#!">오름길 소개</a></li>
+                <li><a href="#!">코스 안내</a></li>
+              </ul>
+              <ul class="menu05">
+                <li><a href="#!">여행소식</a></li>
+                <li><a href="#!">공지</a></li>
+                <li><a href="#!">이벤트</a></li>
+                <li><a href="#!">관광 안내소</a></li>
+                <li><a href="#!">교통 정보</a></li>
+              </ul>
+            </div>
+          </div><!--gnb_menu-->
+        </ul>
+      </div>
+      <div class="right">
+        <label for="search" class="search_box">
+          <div class="icon"><img src="../images/search.png" alt="search_icon"></div>
+        </label>
+        <label for="chk_sun" class="weather_box">
+          <div class="weather"><img src="../images/sun.png" alt="weather_icon"></div>
+          <span>27º</span>
+        </label>
+        <label for="chk_gnb" class="btn_gnb"><img src="../images/menu.png" alt="menu_icon"></label>
+        <div class="user"><a href="#!"><img src="../images/user.png" alt="user_icon"></a></div>
+        <label for="chk_lang" class="lang"><img src="../images/lang.png" alt="lang_icon">
+          <ul class="lang_box">
+            <li class="kor"><a href="#!">KOR</a></li>
+            <li class="eng"><a href="#!">ENG</a></li>
+            <li class="chn"><a href="#!">CHN</a></li>
+          </ul>
+        </label>
+        <label for="chk_size" class="size">
+          <p>가</p>
+        </label>
+        <div class="size_box">
+          <span class="plus">+</span>
+          <span class="clear">초기화</span>
+          <span class="min">ㅡ</span>
+        </div>
+      </div>
+    </header>
+  </div><!--header_outer-->
+  <div class="search_popup">
+    <label for="search" class="close"><img src="../images/close.png" alt="close_icon"></label>
+    <div class="search">
+      <input type="search">
+      <img src="../images/search_g.png" alt="search_icon">
+    </div>
+    <p>인기 검색어</p>
+    <div class="popular">
+      <div class="btn01"><a href="#!">#유네스코</a></div>
+      <div class="btn01"><a href="#!">#액티비티</a></div>
+      <div class="btn01"><a href="#!">#반려동물</a></div>
+      <div class="btn01"><a href="#!">#비오는 날</a></div>
+    </div>
+  </div><!--search_popup-->
+  <div class="weather_outer">
+    <div class="weather_popup">
+      <div class="t_weather">
+        <label label for="chk_sun" class="close"><img src="../images/close.png" alt="close_icon"></label>
+        <div class="top">
+          <div class="weather_img"><img src="../images/sun_b.png" alt="weather_icon"></div>
+          <p>27º</p>
+          <span>흐림</span>
+        </div>
+        <div class="bot">
+          <span>32º</span>
+          <span>25º</span>
+          <span>미세먼지 좋음</span>
+        </div>
+      </div><!--t-weather-->
+      <div class="b_weather">
+        <div class="centre"><a href="#!">기상청 보러가기</a></div>
+        <div class="sky01">
+          <div class="cal">
+            <p>내일</p>
+            <p>07/02</p>
+          </div>
+          <!-- <img src="./images/rain.png" alt="rain_img"> -->
+          <span>소나기</span>
+          <div class="tem">
+            <span>31º</span>
+            <span>22º</span>
+          </div>
+        </div>
+        <div class="sky01">
+          <div class="cal">
+            <p>모레</p>
+            <p>07/03</p>
+          </div>
+          <!-- <img src="./images/rain.png" alt="rain_img"> -->
+          <span>소나기</span>
+          <div class="tem">
+            <span>31º</span>
+            <span>23º</span>
+          </div>
+        </div>
+        <p>해양지수</p>
+        <div class="ocean">
+          <div class="ocean01">
+            <img src="" alt="">
+            <p>제주시</p>
+            <span>파고</span>
+            <span>0m</span>
+            <span>수온</span>
+            <span>15º</span>
+          </div>
+          <div class="ocean01">
+            <img src="" alt="">
+            <p>제주시</p>
+            <span>파고</span>
+            <span>0m</span>
+            <span>파주기</span>
+            <span>0.0s</span>
+          </div>
+        </div>
+      </div><!--b-weahter-->
+    </div>
+  </div><!--weather_outer-->
+  <input type="checkbox" id="btn_login">
+  <input type="radio" name="menu" id="menu_tab01">
+  <input type="radio" name="menu" id="menu_tab02">
+  <input type="radio" name="menu" id="menu_tab03">
+  <input type="radio" name="menu" id="menu_tab04">
+  <input type="radio" name="menu" id="menu_tab05">
+  <div class="gnb_mobile">
+    <label for="chk_gnb" class="close"><img src="../images/close.png" alt="close_icon"></label>
+    <div class="btn_box">
+      <label for="btn_login" class="login">로그인</label>
+      <div class="mypage"><a href="#!">마이페이지</a></div>
+      <label for="chk_lang" class="lang">KOR
+        <img src="../images/bot_arrow.png" alt="arrow_img">
+      </label>
+    </div>
+    <div class="login_box">
+      <label for="btn_login" class="close"><img src="../images/close.png" alt="close_icon"></label>
+      <p>로그인</p>
+      <span>로그인 하시면 여행지 리뷰 등록 및 내가 찜한 여행지와 일정,<br>방문지 등의 다양한 기능을 사용하실 수 있습니다.</span>
+      <div class="kakao"><a href="#!">
+        <i class="fa-brands fa-kakao-talk"></i>
+        <span>카카오톡으로 로그인</span></a>
+      </div>
+      <div class="naver"><a href="#!">
+        <img src="../images/naver.png" alt="naver_icon">
+        <span>네이버 ID로 로그인</span></a>
+      </div>
+      <div class="apple"><a href="#!">
+        <img src="../images/apple.png" alt="apple_icon">
+        <span>애플 ID로 로그인</span></a>
+      </div>
+      <div class="google"><a href="#!">
+        <img src="../images/google.png" alt="google_icon">
+        <span>구글 ID로 로그인</span></a>
+      </div>
+      <div class="find">
+        <span><a href="#!">회원가입</a></span>
+        <div class="line"></div>
+        <span><a href="#!">아이디 찾기</a></span>
+        <div class="line"></div>
+        <span><a href="#!">비밀번호 찾기</a></span>
+      </div>
+    </div>
+    <ul class="lang_box">
+      <li class="kor"><a href="#!">KOR</a></li>
+      <li class="eng"><a href="#!">ENG</a></li>
+      <li class="chn"><a href="#!">CHN</a></li>
+    </ul>
+    <div class="menu_box">
+      <label for="menu_tab01" class="tab01">
+        <span>제주놀멍</span>
+        <img src="../images/bot_arrow.png" alt="arrow_img"> 
+        <img src="../images/top_arrow.png" alt="arrow_img" class="top_arrow"> 
+      </label>
+      <ul class="menu01">
+        <li><a href="./sub.html">지금 제주는</a></li>
+        <li><a href="#!">제주 관광지</a></li>
+        <li><a href="#!">음식</a></li>
+        <li><a href="#!">숙박</a></li>
+        <li><a href="#!">쇼핑</a></li>
+      </ul><!--menu01-->
+      <label for="menu_tab02" class="tab02">
+        <span>AI추천</span>
+        <img src="../images/bot_arrow.png" alt="arrow_img">
+        <img src="../images/top_arrow.png" alt="arrow_img" class="top_arrow"> 
+      </label>
+      <ul class="menu02">
+        <li><a href="#!">추천 여행지</a></li>
+        <li><a href="#!">추천 코스</a></li>
+      </ul><!--menu02-->
+      <label for="menu_tab03" class="tab03">
+        <span>K-pick</span>
+        <img src="../images/bot_arrow.png" alt="arrow_img">
+        <img src="../images/top_arrow.png" alt="arrow_img" class="top_arrow"> 
+      </label>
+      <ul class="menu03">
+        <li><a href="#!">Artist-pick</a></li>
+        <li><a href="#!">드라마 촬영지</a></li>
+      </ul><!--menu03-->
+      <label for="menu_tab04" class="tab04">
+        <span>오름길</span>
+        <img src="../images/bot_arrow.png" alt="arrow_img">
+        <img src="../images/top_arrow.png" alt="arrow_img" class="top_arrow"> 
+      </label>
+      <ul class="menu04">
+        <li><a href="#!">오름길 소개</a></li>
+        <li><a href="#!">코스 안내</a></li>
+      </ul><!--menu04-->
+      <label for="menu_tab05" class="tab05">
+        <span>제주소식통</span>
+        <img src="../images/bot_arrow.png" alt="arrow_img">
+        <img src="../images/top_arrow.png" alt="arrow_img" class="top_arrow"> 
+      </label>
+      <ul class="menu05">
+        <li><a href="#!">여행소식</a></li>
+        <li><a href="#!">공지</a></li>
+        <li><a href="#!">이벤트</a></li>
+        <li><a href="#!">관광 안내소</a></li>
+        <li><a href="#!">교통 정보</a></li>
+      </ul><!--menu05-->
+    </div><!--menu_box-->
+  </div><!--gnb_mobile-->
+
+  <div class="login_page">
+    <p>로그인</p>
+    <span>로그인 하시면 여행지 리뷰 등록 및 내가 찜한 여행지와 일정,<br>방문지 등의 다양한 기능을 사용하실 수 있습니다.</span>
+    <div class="kakao"><a href="#!">
+      <i class="fa-brands fa-kakao-talk"></i>
+      <span>카카오톡으로 로그인</span></a>
+    </div>
+    <div class="naver"><a href="#!">
+      <img src="../images/naver.png" alt="naver_icon">
+      <span>네이버 ID로 로그인</span></a>
+    </div>
+    <div class="apple"><a href="#!">
+      <img src="../images/apple.png" alt="apple_icon">
+      <span>애플 ID로 로그인</span></a>
+    </div>
+    <div class="google"><a href="#!">
+      <img src="../images/google.png" alt="google_icon">
+      <span>구글 ID로 로그인</span></a>
+    </div>
+    <div class="find">
+      <span><a href="#!">회원가입</a></span>
+      <div class="line"></div>
+      <span><a href="#!">아이디 찾기</a></span>
+      <div class="line"></div>
+      <span><a href="#!">비밀번호 찾기</a></span>
+    </div>
+  </div>
+
+  <div class="footer_outer">
+    <div class="f_top">
+      <div class="jeju_01"><img src="../images/jeju_01.png" alt="jeju_logo_img"></div>
+      <div class="jeju_02"><img src="../images/jeju_02.png" alt="jeju_logo_img"></div>
+      <div class="jeju_03"><img src="../images/jeju_03.png" alt="jeju_logo_img"></div>
+      <div class="jeju_04"><img src="../images/jeju_04.png" alt="jeju_logo_img"></div>
+      <div class="jeju_05"><img src="../images/jeju_05.png" alt="jeju_logo_img"></div>
+      <div class="jeju_06"><img src="../images/jeju_06.png" alt="jeju_logo_img"></div>
+      <div class="jeju_01"><img src="../images/jeju_01.png" alt="jeju_logo_img"></div>
+      <div class="jeju_02"><img src="../images/jeju_02.png" alt="jeju_logo_img"></div>
+      <div class="jeju_03"><img src="../images/jeju_03.png" alt="jeju_logo_img"></div>
+      <div class="jeju_04"><img src="../images/jeju_04.png" alt="jeju_logo_img"></div>
+      <div class="jeju_05"><img src="../images/jeju_05.png" alt="jeju_logo_img"></div>
+      <div class="jeju_06"><img src="../images/jeju_06.png" alt="jeju_logo_img"></div>
+      <div class="jeju_01"><img src="../images/jeju_01.png" alt="jeju_logo_img"></div>
+      <div class="jeju_02"><img src="../images/jeju_02.png" alt="jeju_logo_img"></div>
+      <div class="jeju_03"><img src="../images/jeju_03.png" alt="jeju_logo_img"></div>
+      <div class="jeju_04"><img src="../images/jeju_04.png" alt="jeju_logo_img"></div>
+      <div class="jeju_05"><img src="../images/jeju_05.png" alt="jeju_logo_img"></div>
+      <div class="jeju_06"><img src="../images/jeju_06.png" alt="jeju_logo_img"></div>
+      <div class="jeju_01"><img src="../images/jeju_01.png" alt="jeju_logo_img"></div>
+      <div class="jeju_02"><img src="../images/jeju_02.png" alt="jeju_logo_img"></div>
+      <div class="jeju_03"><img src="../images/jeju_03.png" alt="jeju_logo_img"></div>
+      <div class="jeju_04"><img src="../images/jeju_04.png" alt="jeju_logo_img"></div>
+      <div class="jeju_05"><img src="../images/jeju_05.png" alt="jeju_logo_img"></div>
+      <div class="jeju_06"><img src="../images/jeju_06.png" alt="jeju_logo_img"></div>
+    </div>
+    <footer class="footer">
+      <div class="call">
+        <div class="sns_box">
+          <a href="#!"><i class="fa-brands fa-instagram insta"></i></a>
+          <a href="#!"><i class="fa-brands fa-youtube youtube"></i></a>
+          <a href="#!"><i class="fa-brands fa-facebook-f face"></i></a>
+        </div>
+        <span>고객센터</span>
+        <span>064-740-6000</span>
+      </div>
+      <div class="infor">
+        <div class="f_logo_box">
+          <div class="f_logo"><img src="../images/f_logo.png" alt="f_logo_img"></div>
+        </div>
+        <p class="addr">(63122) 제주특별자치도 제주시 선덕로 23(연동) 제주웰컴센터</p>
+        <p>제주관광공사 Tel : 064-740-6000~1   ㅣ    FAX : 064-740-6090</p>
+        <p class="mobile">사업자등록번호 : 616-82-21432</p>
+        <p class="mobile">관광불편신고 : 제주관광불편신고센터(1533-0082)</p>
+        <p class="pc">사업자등록번호 : 616-82-21432   ㅣ   관광불편신고 : 제주관광불편신고센터(1533-0082)</p>
+      </div>
+    </footer>
+  </div>
+  <aside class="top_btn"><a href="#top"><img src="../images/top.png" alt="top_icon"></a></aside>
+</body>
+</html>

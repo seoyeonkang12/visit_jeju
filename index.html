@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=no">
+  <title>Visit JeJu</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+  <!--------swiper-------->
+
+  <script src="./js/header.js"></script>
+  <script src="./js/main.js"></script>
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/footer.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css"/>
+  <!--------swiper-------->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+  <input type="checkbox" id="search">
+  <input type="checkbox" id="chk_sun">
+  <input type="checkbox" id="chk_gnb">
+  <input type="checkbox" id="chk_lang">
+  <input type="checkbox" id="chk_size">
+
+  <div class="header_outer">
+    <header class="header">
+      <div class="logo_gnb">
+        <div class="logo"><a href="#!"><img src="./images/logo.png" alt="logo_img"></a></div>
+        <nav>
+          <ul class="gnb">
+            <li><a href="./sub/sub.html">제주놀멍</a></li>
+            <li><a href="#!">AI추천</a></li>
+            <li><a href="#!">K-pick</a></li>
+            <li><a href="#!">오름길</a></li>
+            <li><a href="#!">제주소식통</a></li>
+          </ul>
+          <div class="gnb_menu">
+            <div class="menu_box">
+              <ul class="menu01">
+                <li><a href="./sub/sub.html">지금 제주는</a></li>
+                <li><a href="#!">제주 관광지</a></li>
+                <li><a href="#!">음식</a></li>
+                <li><a href="#!">숙박</a></li>
+                <li><a href="#!">쇼핑</a></li>
+              </ul>
+              <ul class="menu02">
+                <li><a href="#!">추천 여행지</a></li>
+                <li><a href="#!">추천 코스</a></li>
+              </ul>
+              <ul class="menu03">
+                <li><a href="#!">Artist-pick</a></li>
+                <li><a href="#!">드라마 촬영지</a></li>
+              </ul>
+              <ul class="menu04">
+                <li><a href="#!">오름길 소개</a></li>
+                <li><a href="#!">코스 안내</a></li>
+              </ul>
+              <ul class="menu05">
+                <li><a href="#!">여행소식</a></li>
+                <li><a href="#!">공지</a></li>
+                <li><a href="#!">이벤트</a></li>
+                <li><a href="#!">관광 안내소</a></li>
+                <li><a href="#!">교통 정보</a></li>
+              </ul>
+            </div>
+          </div><!--gnb_menu-->
+        </nav>
+      </div>
+      <div class="right">
+        <label for="search" class="search_box">
+          <div class="icon"><img src="./images/search.png" alt="search_icon"></div>
+        </label>
+        <label for="chk_sun" class="weather_box">
+          <div class="weather"><img src="./images/sun.png" alt="weather_icon"></div>
+          <span>27º</span>
+        </label>
+        <label for="chk_gnb" class="btn_gnb"><img src="./images/menu.png" alt="menu_icon"></label>
+        <div class="user"><a href="./sub/login.html"><img src="./images/user.png" alt="user_icon"></a></div>
+        <div class="lang"><img src="./images/lang.png" alt="lang_icon">
+          <ul class="lang_box">
+            <li class="kor"><a href="#!">KOR</a></li>
+            <li class="eng"><a href="#!">ENG</a></li>
+            <li class="chn"><a href="#!">CHN</a></li>
+          </ul>
+        </div><!--lang-->
+        <div class="size">
+          <p>가</p>
+        </div>
+        <div class="size_box">
+          <span class="plus">+</span>
+          <span class="clear">초기화</span>
+          <span class="min">ㅡ</span>
+        </div>
+      </div>
+    </header>
+  </div><!--header_outer-->
+  <div class="search_popup">
+    <label for="search" class="close"><img src="./images/close.png" alt="close_icon"></label>
+    <div class="search">
+      <input type="search">
+      <img src="./images/search_g.png" alt="search_icon">
+    </div>
+    <p>인기 검색어</p>
+    <div class="popular">
+      <div class="btn01"><a href="#!">#유네스코</a></div>
+      <div class="btn01"><a href="#!">#액티비티</a></div>
+      <div class="btn01"><a href="#!">#반려동물</a></div>
+      <div class="btn01"><a href="#!">#비오는 날</a></div>
+    </div>
+  </div><!--search_popup-->
+  <div class="weather_outer">
+    <div class="weather_popup">
+      <div class="t_weather">
+        <label label for="chk_sun" class="close"><img src="./images/close.png" alt="close_icon"></label>
+        <div class="top">
+          <div class="weather_img"><img src="./images/sun_b.png" alt="weather_icon"></div>
+          <p>27º</p>
+          <span>흐림</span>
+        </div>
+        <div class="bot">
+          <span>32º</span>
+          <span>25º</span>
+          <span>미세먼지 좋음</span>
+        </div>
+      </div><!--t-weather-->
+      <div class="b_weather">
+        <div class="centre"><a href="#!">기상청 보러가기</a></div>
+        <div class="sky01">
+          <div class="cal">
+            <p>내일</p>
+            <p>07/02</p>
+          </div>
+          <!-- <img src="./images/rain.png" alt="rain_img"> -->
+          <span>소나기</span>
+          <div class="tem">
+            <span>31º</span>
+            <span>22º</span>
+          </div>
+        </div>
+        <div class="sky01">
+          <div class="cal">
+            <p>모레</p>
+            <p>07/03</p>
+          </div>
+          <!-- <img src="./images/rain.png" alt="rain_img"> -->
+          <span>소나기</span>
+          <div class="tem">
+            <span>31º</span>
+            <span>23º</span>
+          </div>
+        </div>
+        <p>해양지수</p>
+        <div class="ocean">
+          <div class="ocean01">
+            <img src="./images/" alt="">
+            <p>제주시</p>
+            <span>파고</span>
+            <span>0m</span>
+            <span>수온</span>
+            <span>15º</span>
+          </div>
+          <div class="ocean01">
+            <img src="./images/" alt="">
+            <p>제주시</p>
+            <span>파고</span>
+            <span>0m</span>
+            <span>파주기</span>
+            <span>0.0s</span>
+          </div>
+        </div>
+      </div><!--b-weahter-->
+    </div>
+  </div><!--weather_outer-->
+  <input type="checkbox" id="btn_login">
+  <input type="radio" name="menu" id="menu_tab01">
+  <input type="radio" name="menu" id="menu_tab02">
+  <input type="radio" name="menu" id="menu_tab03">
+  <input type="radio" name="menu" id="menu_tab04">
+  <input type="radio" name="menu" id="menu_tab05">
+  <div class="gnb_mobile">
+    <label for="chk_gnb" class="close"><img src="./images/close.png" alt="close_icon"></label>
+    <div class="btn_box">
+      <label for="btn_login" class="login">로그인</label>
+      <div class="mypage"><a href="#!">마이페이지</a></div>
+      <label for="chk_lang" class="lang">KOR
+        <img src="./images/bot_arrow.png" alt="arrow_img">
+      </label>
+    </div>
+    <div class="login_box">
+      <label for="btn_login" class="close"><img src="./images/close.png" alt="close_icon"></label>
+      <p>로그인</p>
+      <span>로그인 하시면 여행지 리뷰 등록 및 내가 찜한 여행지와 일정,<br>방문지 등의 다양한 기능을 사용하실 수 있습니다.</span>
+      <div class="kakao"><a href="#!">
+        <i class="fa-brands fa-kakao-talk"></i>
+        <span>카카오톡으로 로그인</span></a>
+      </div>
+      <div class="naver"><a href="#!">
+        <img src="./images/naver.png" alt="naver_icon">
+        <span>네이버 ID로 로그인</span></a>
+      </div>
+      <div class="apple"><a href="#!">
+        <img src="./images/apple.png" alt="apple_icon">
+        <span>애플 ID로 로그인</span></a>
+      </div>
+      <div class="google"><a href="#!">
+        <img src="./images/google.png" alt="google_icon">
+        <span>구글 ID로 로그인</span></a>
+      </div>
+      <div class="find">
+        <span><a href="#!">회원가입</a></span>
+        <div class="line"></div>
+        <span><a href="#!">아이디 찾기</a></span>
+        <div class="line"></div>
+        <span><a href="#!">비밀번호 찾기</a></span>
+      </div>
+    </div>
+    <ul class="lang_box">
+      <li class="kor"><a href="#!">KOR</a></li>
+      <li class="eng"><a href="#!">ENG</a></li>
+      <li class="chn"><a href="#!">CHN</a></li>
+    </ul>
+    <div class="menu_box">
+      <label for="menu_tab01" class="tab01">
+        <span>제주놀멍</span>
+        <img src="./images/bot_arrow.png" alt="arrow_img"> 
+        <img src="./images/top_arrow.png" alt="arrow_img" class="top_arrow"> 
+      </label>
+      <ul class="menu01">
+        <li><a href="./sub/sub.html">지금 제주는</a></li>
+        <li><a href="#!">제주 관광지</a></li>
+        <li><a href="#!">음식</a></li>
+        <li><a href="#!">숙박</a></li>
+        <li><a href="#!">쇼핑</a></li>
+      </ul><!--menu01-->
+      <label for="menu_tab02" class="tab02">
+        <span>AI추천</span>
+        <img src="./images/bot_arrow.png" alt="arrow_img">
+        <img src="./images/top_arrow.png" alt="arrow_img" class="top_arrow"> 
+      </label>
+      <ul class="menu02">
+        <li><a href="#!">추천 여행지</a></li>
+        <li><a href="#!">추천 코스</a></li>
+      </ul><!--menu02-->
+      <label for="menu_tab03" class="tab03">
+        <span>K-pick</span>
+        <img src="./images/bot_arrow.png" alt="arrow_img">
+        <img src="./images/top_arrow.png" alt="arrow_img" class="top_arrow"> 
+      </label>
+      <ul class="menu03">
+        <li><a href="#!">Artist-pick</a></li>
+        <li><a href="#!">드라마 촬영지</a></li>
+      </ul><!--menu03-->
+      <label for="menu_tab04" class="tab04">
+        <span>오름길</span>
+        <img src="./images/bot_arrow.png" alt="arrow_img">
+        <img src="./images/top_arrow.png" alt="arrow_img" class="top_arrow"> 
+      </label>
+      <ul class="menu04">
+        <li><a href="#!">오름길 소개</a></li>
+        <li><a href="#!">코스 안내</a></li>
+      </ul><!--menu04-->
+      <label for="menu_tab05" class="tab05">
+        <span>제주소식통</span>
+        <img src="./images/bot_arrow.png" alt="arrow_img">
+        <img src="./images/top_arrow.png" alt="arrow_img" class="top_arrow"> 
+      </label>
+      <ul class="menu05">
+        <li><a href="#!">여행소식</a></li>
+        <li><a href="#!">공지</a></li>
+        <li><a href="#!">이벤트</a></li>
+        <li><a href="#!">관광 안내소</a></li>
+        <li><a href="#!">교통 정보</a></li>
+      </ul><!--menu05-->
+    </div><!--menu_box-->
+  </div><!--gnb_mobile-->
+  <section class="visual_main mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <picture>
+          <source media="(min-width: 1025px)" srcset="./images/main01.jpg">
+          <source media="(min-width: 769px)" srcset="./images/main01_769.jpg">
+          <source media="(min-width: 601px)" srcset="./images/main01_601.jpg">
+          <source media="(min-width: 320px)" srcset="./images/main01_320.jpg">
+          <img src="./images/main01.jpg" style="width: 100%;" alt="visual_main_img">
+        </picture>
+        <div class="txt">
+          <span>다양한 액티비티가 있는 제주</span>
+          <p>바다를 만끽할 수 있는</p>
+          <p>제주 액티비티</p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <picture>
+          <source media="(min-width: 1025px)" srcset="./images/main02.jpg">
+          <source media="(min-width: 769px)" srcset="./images/main02_769.jpg">
+          <source media="(min-width: 601px)" srcset="./images/main02_601.jpg">
+          <source media="(min-width: 320px)" srcset="./images/main02_320.jpg">
+          <img src="./images/main02.jpg" style="width: 100%;" alt="visual_main_img">
+        </picture>
+        <div class="txt">
+          <span>대한민국 제주의 진짜 매력</span>
+          <p>한국의 하와이,</p>
+          <p>힐링 제주</p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <picture>
+          <source media="(min-width: 1025px)" srcset="./images/main03.jpg">
+          <source media="(min-width: 769px)" srcset="./images/main03_769.jpg">
+          <source media="(min-width: 601px)" srcset="./images/main03_601.jpg">
+          <source media="(min-width: 320px)" srcset="./images/main03_320.jpg">
+          <img src="./images/main03.jpg" style="width: 100%;" alt="visual_main_img">
+        </picture>
+        <div class="txt">
+          <span>자연이 주는 감동</span>
+          <p>자연과 함께</p>
+          <p>숨쉬는 이곳, 제주</p>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="metapo_outer">
+      <ul class="metapo">
+        <li class="metapo01"><a href="#!">AI추천<img src="./images/metapo_01.png" alt="metapo_01_img"></a></li>
+        <li class="metapo02"><a href="#!">K-pick<img src="./images/metapo_02.png" alt="metapo_02_img"></a></li>
+        <li class="metapo03"><a href="./sub/sub.html">축제행사<img src="./images/metapo_03.png" alt="metapo_03_img"></a></li>
+        <li class="metapo04"><a href="#!">오름길<img src="./images/metapo_04.png" alt="metapo_04_img"></a></li>
+        <li class="metapo05"><a href="#!">명소<img src="./images/metapo_05.png" alt="metapo_05_img"></a></li>
+        <li class="metapo06"><a href="#!">교통<img src="./images/metapo_06.png" alt="metapo_06_img"></a></li>
+      </ul>
+    </div>
+  </section><!--visual_main-->
+
+  <section class="ai_mobile">
+    <div class="title">
+      <div class="txt">
+        <span>AI 추천</span>
+        <p>제주 여행 코스</p>
+      </div>
+      <div class="more_btn"><a href="#!">더보기</a></div>
+    </div>
+    <div class="tab_box">
+      <div class="tab on_tab">#유네스코</div>
+      <div class="line"></div>
+      <div class="tab">#액티비티</div>
+      <div class="line"></div>
+      <div class="tab">#반려동물</div>
+      <div class="line"></div>
+      <div class="tab">#비오는 날</div>
+      <div class="line"></div>
+      <div class="tab">#오름</div>
+    </div>
+    <div class="tab_sheet on_sheet">
+      <div class="ai_box ai">
+        <div class="img_box"><img src="./images/ai_mobile_01-1.jpg" alt="ai_mobile_img"></div>
+        <div class="txt">
+          <p>섭지코지</p>
+          <span>제주도 동쪽 바닷가에 볼록 튀어나온 섭지코지는 성산일출봉을 배경으로 한 해안 풍경이 일품입니다.</span>
+        </div>
+      </div>
+      <div class="ai_box02 ai">
+        <div class="img_box"><img src="./images/ai_mobile_01-2.jpg" alt="ai_mobile_img"></div>
+        <div class="txt">
+          <p>새별오름</p>
+          <span>새별오름은 서부의 대표 오름으로, ‘저녁 하늘에 샛별과 같이 외롭게 서있다'하여 붙여진 이름이라 합니다.</span>
+        </div>
+      </div>
+      <div class="ai_box03 ai">
+        <div class="img_box"><img src="./images/ai_mobile_01-3.jpg" alt="ai_mobile_img"></div>
+        <div class="txt">
+          <p>카멜리아힐</p>
+          <span>카멜리아힐은 동양에서 가장 큰 동백 수목원으로 수많은 동백꽃을 만날 수 있습니다.</span>
+        </div>
+      </div>
+      <div class="ai_box04 ai">
+        <div class="img_box"><img src="./images/ai_mobile_01-4.jpg" alt="ai_mobile_img"></div>
+        <div class="txt">
+          <p>김녕해수욕장</p>
+          <span>하얀 모래에 부서지는 파도들이 시원한 소리를 내고, 코발트빛 바다 풍경이 제주 자연의 아름다움을 느끼게 해주는 곳입니다.</span>
+        </div>
+      </div>
+    </div>
+    <div class="tab_sheet">
+      <div class="ai_box ai">
+        <div class="img_box"><img src="./images/ai_mobile_02-1.jpg" alt="ai_mobile_img"></div>
+        <div class="txt">
+          <p>투명카약</p>
+          <span>바닥이 투명한 카약을 타고 에메랄드빛 바다 위를 마치 떠 있는 듯한 신비로운 경험을 할 수 있는 제주의 대표적인 해양 액티비티입니다.</span>
+        </div>
+      </div>
+      <div class="ai_box02 ai">
+        <div class="img_box"><img src="./images/ai_mobile_02-2.jpg" alt="ai_mobile_img"></div>
+        <div class="txt">
+          <p>제주 9.81파크</p>
+          <span>애월 바다와 한라산 사이의 탁 트인 자연 속에서 첨단 기술을 접목한 액티비티를 즐길 수 있는 국내 최초의 스마트 친환경 레이싱 테마파크입니다.</span>
+        </div>
+      </div>
+      <div class="ai_box03 ai">
+        <div class="img_box"><img src="./images/ai_mobile_02-3.jpg" alt="ai_mobile_img"></div>
+        <div class="txt">
+          <p>승마체험</p>
+          <span>제주의 푸른 초원, 원시림 곶자왈, 그리고 탁 트인 바다를 배경으로 말과 교감하며 달릴 수 있는 제주의 대표적인 자연 액티비티입니다.</span>
+        </div>
+      </div>
+      <div class="ai_box04 ai">
+        <div class="img_box"><img src="./images/ai_mobile_02-4.jpg" alt="ai_mobile_img"></div>
+        <div class="txt">
+          <p>요트투어</p>
+          <span> 에메랄드빛 청정 제주 바다 위에서 럭셔리한 세일링을 즐기며 낚시 체험, 선상 다과, 그리고 환상적인 일몰이나 야생 돌고래를 만날 수 있는 대표적인 해양 액티비티입니다.</span>
+        </div>
+      </div>
+    </div>
+    <div class="tab_sheet">
+      <div class="ai_box ai">
+        <div class="img_box"><img src="./images/ai_mobile_03-1.jpg" alt="ai_mobile_img"></div>
+        <div class="txt">
+          <p>함도그비치</p>
+          <span> 함덕해수욕장에 조성된 제주 최초의 공식 반려견 동반 입욕 지정 구역입니다. 반려견과 반려인이 함께 바다 수영을 즐길 수 있어 좋습니다.</span>
+        </div>
+      </div>
+      <div class="ai_box02 ai">
+        <div class="img_box"><img src="./images/ai_mobile_03-2.jpg" alt="ai_mobile_img"></div>
+        <div class="txt">
+          <p>산양큰엉곶</p>
+          <span>제주의 허파라 불리는 곶자왈 원시림 속에 동화 속 비밀 정원을 구현해 놓은 제주 서부의 대표적인 힐링 명소입니다.</span>
+        </div>
+      </div>
+      <div class="ai_box03 ai">
+        <div class="img_box"><img src="./images/ai_mobile_03-3.jpg" alt="ai_mobile_img"></div>
+        <div class="txt">
+          <p>한림공원</p>
+          <span>9가지 테마가 펼쳐지는 제주의 대표적인 식물원이자 복합 테마파크입니다. 협재해수욕장 맞은편에 있어 제주 여행시 함께 방문하기 좋습니다.</span>
+        </div>
+      </div>
+      <div class="ai_box04 ai">
+        <div class="img_box"><img src="./images/ai_mobile_03-4.jpg" alt="ai_mobile_img"></div>
+        <div class="txt">
+          <p>신창풍차해안도로</p>
+          <span>에메랄드빛 바다 위로 우뚝 솟은 하얀 풍차와 푸른 하늘이 어우러져 이국적인 풍경을 선사하는 제주의 대표적인 드라이브 명소입니다.</span>
+        </div>
+      </div>
+    </div>
+    <div class="tab_sheet">
+      <div class="ai_box ai">
+        <div class="img_box"><img src="./images/ai_mobile_04-1.jpg" alt="ai_mobile_img"></div>
+        <div class="txt">
+          <p>오셜록 티 뮤지엄</p>
+          <span>끝없이 펼쳐진 유기농 녹차밭과 현대적인 건축물이 어우러진 제주의 대표적인 문화 공간입니다. 다양한 볼거리가 한곳에 모여 있습니다.</span>
+        </div>
+      </div>
+      <div class="ai_box02 ai">
+        <div class="img_box"><img src="./images/ai_mobile_04-2.jpg" alt="ai_mobile_img"></div>
+        <div class="txt">
+          <p>사려니숲길</p>
+          <span>청정한 삼나무 향을 맡으며 숲 조각 사이로 드는 햇살을 느낄 수 있는 제주도의 대표적인 힐링 숲길입니다. 유네스코 제주도 생물권보전지역으로 지정되어 있습니다.</span>
+        </div>
+      </div>
+      <div class="ai_box03 ai">
+        <div class="img_box"><img src="./images/ai_mobile_04-3.jpg" alt="ai_mobile_img"></div>
+        <div class="txt">
+          <p>서귀다원</p>
+          <span>한라산 해발 250m 청정 지역에 자리 잡은 고즈넉하고 조용한 제주도 녹차밭입니다. 여유롭게 산책하며 차 한잔의 여유를 즐기기 좋은 힐링 명소입니다.</span>
+        </div>
+      </div>
+      <div class="ai_box04 ai">
+        <div class="img_box"><img src="./images/ai_mobile_04-4.jpg" alt="ai_mobile_img"></div>
+        <div class="txt">
+          <p>엉또폭포</p>
+          <span>평소에는 물이 흐르지 않다가, 폭우가 쏟아질때만 웅장하고 멋진 물줄기를 드러내는 신비로운 엉또폭포입니다.</span>
+        </div>
+      </div>
+    </div>
+    <div class="tab_sheet">
+      <div class="ai_box ai">
+        <div class="img_box"><img src="./images/ai_mobile_05-1.jpg" alt="ai_mobile_img"></div>
+        <div class="txt">
+          <p>금악오름</p>
+          <span>멋진 일몰을 볼 수 있는 장소로 정상 분화구에 고요한 호수가 있으며 왕복 20분 정도로 쉽게 오를 수 있습니다. </span>
+        </div>
+      </div>
+      <div class="ai_box02 ai">
+        <div class="img_box"><img src="./images/ai_mobile_05-2.jpg" alt="ai_mobile_img"></div>
+        <div class="txt">
+          <p>아부오름</p>
+          <span>아부오름은 분화구 안쪽의 동그란 삼나무 숲이 독특한 곳이며 경사가 완만해 15분 만에 정상에 갈 수 있습니다.</span>
+        </div>
+      </div>
+      <div class="ai_box03 ai">
+        <div class="img_box"><img src="./images/ai_mobile_05-3.jpg" alt="ai_mobile_img"></div>
+        <div class="txt">
+          <p>용눈이오름</p>
+          <span>능선의 아름다움을 뽐내는 오름에선 풀을 뜯는 말을 볼 수 있습니다. 경사가 심하지 않아 편하게 산책하듯 오릅니다.</span>
+        </div>
+      </div>
+      <div class="ai_box04 ai">
+        <div class="img_box"><img src="./images/ai_mobile_05-4.jpg" alt="ai_mobile_img"></div>
+        <div class="txt">
+          <p>다랑쉬오름</p>
+          <span>제주 동쪽에서 가장 높은 웅장한 오름으로 정상에서 한라산과 성산일출봉이 한눈에 보이는 아름다운 곳입니다.</span>
+        </div>
+      </div>
+    </div>
+  </section><!--ai_mobile-->
+
+  <section class="ai_tablet">
+    <div class="title">
+      <div class="txt">
+        <span>AI 추천</span>
+        <p>제주 여행 코스</p>
+      </div>
+      <div class="more_btn"><a href="#!">더보기</a></div>
+    </div>
+    <div class="tab_box">
+      <div class="tab on_tab">#유네스코</div>
+      <div class="line"></div>
+      <div class="tab">#액티비티</div>
+      <div class="line"></div>
+      <div class="tab">#반려동물</div>
+      <div class="line"></div>
+      <div class="tab">#비오는 날</div>
+      <div class="line"></div>
+      <div class="tab">#오름</div>
+    </div>
+    <div class="tab_sheet on_sheet">
+      <div class="flex">
+        <div class="ai_box ai"><a href="#!">
+          <div class="img_box"><img src="./images/ai01-1.jpg" alt="ai_mobile_img"></div>
+          <div class="txt">
+            <p>섭지코지</p>
+            <span>해안 풍경이 일품인 섭지코지</span>
+          </div></a>
+        </div>
+        <div class="ai_box02 ai"><a href="#!">
+          <div class="img_box"><img src="./images/ai01-2.jpg" alt="ai_mobile_img"></div>
+          <div class="txt">
+            <p>새별오름</p>
+            <span>가을철 황금빛 억새와 아름다운 일몰</span>
+          </div></a>
+        </div>
+        <div class="ai_box03 ai"><a href="#!">
+          <div class="img_box"><img src="./images/ai01-3.jpg" alt="ai_mobile_img"></div>
+          <div class="txt">
+            <p>카멜리아힐</p>
+            <span>동양 최대 규모의 제주 동백 수목원</span>
+          </div></a>
+        </div>
+        <div class="ai_box04 ai"><a href="#!">
+          <div class="img_box"><img src="./images/ai01-4.jpg" alt="ai_mobile_img"></div>
+          <div class="txt">
+            <p>김녕해수욕장</p>
+            <span>하얀 모래와 파도가 아름다운 해수욕장</span>
+          </div></a>
+        </div>
+      </div>
+    </div>
+    <div class="tab_sheet">
+      <div class="flex">
+        <div class="ai_box02 ai">
+          <div class="img_box"><img src="./images/ai02-1.jpg" alt="ai_mobile_img"></div>
+          <div class="txt">
+            <p>투명카약</p>
+            <span>바다 속이 보이는 이색 패들링 체험</span>
+          </div>
+        </div>
+        <div class="ai_box03 ai">
+          <div class="img_box"><img src="./images/ai02-2.jpg" alt="ai_mobile_img"></div>
+          <div class="txt">
+            <p>제주 9.81파크</p>
+            <span>세계 최초의 그래비티 레이싱 테마파크</span>
+          </div>
+        </div>
+        <div class="ai_box ai">
+          <div class="img_box"><img src="./images/ai02-3.jpg" alt="ai_mobile_img"></div>
+          <div class="txt">
+            <p>승마체험</p>
+            <span>한라산이 보이는 초원에서의 힐링 승마</span>
+          </div>
+        </div>
+        <div class="ai_box04 ai">
+          <div class="img_box"><img src="./images/ai02-4.jpg" alt="ai_mobile_img"></div>
+          <div class="txt">
+            <p>요트투어</p>
+            <span>럭셔리 요트에서 선상 낚시와 노을 감상</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab_sheet">
+      <div class="flex">
+        <div class="ai_box ai">
+          <div class="img_box"><img src="./images/ai03-1.jpg" alt="ai_mobile_img"></div>
+          <div class="txt">
+            <p>함도그비치</p>
+            <span>반려견 전용 해변, 함덕해수욕장</span>
+          </div>
+        </div>
+        <div class="ai_box02 ai">
+          <div class="img_box"><img src="./images/ai03-2.jpg" alt="ai_mobile_img"></div>
+          <div class="txt">
+            <p>산양큰엉곶</p>
+            <span>감성 가득한 곶자왈 숲길</span>
+          </div>
+        </div>
+        <div class="ai_box03 ai">
+          <div class="img_box"><img src="./images/ai03-3.jpg" alt="ai_mobile_img"></div>
+          <div class="txt">
+            <p>한림공원</p>
+            <span>가을꽃과 함께 하는 자연 산책</span>
+          </div>
+        </div>
+        <div class="ai_box04 ai">
+          <div class="img_box"><img src="./images/ai03-4.jpg" alt="ai_mobile_img"></div>
+          <div class="txt">
+            <p>신창풍차해안도로</p>
+            <span>반려견과 하얀 풍차를 따라 달리는</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab_sheet">
+      <div class="flex">
+        <div class="ai_box ai">
+          <div class="img_box"><img src="./images/ai04-1.jpg" alt="ai_mobile_img"></div>
+          <div class="txt">
+            <p>오셜록 티 뮤지엄</p>
+            <span>따뜻한 차를 마시며 녹차밭 풍경 감상</span>
+          </div>
+        </div>
+        <div class="ai_box02 ai">
+          <div class="img_box"><img src="./images/ai04-2.jpg" alt="ai_mobile_img"></div>
+          <div class="txt">
+            <p>사려니숲길</p>
+            <span>진한 삼나무 향기를 느낄 수 있는 숲길</span>
+          </div>
+        </div>
+        <div class="ai_box03 ai">
+          <div class="img_box"><img src="./images/ai04-3.jpg" alt="ai_mobile_img"></div>
+          <div class="txt">
+            <p>서귀다원</p>
+            <span>제주 청정 유기농 녹차 공원</span>
+          </div>
+        </div>
+        <div class="ai_box04 ai">
+          <div class="img_box"><img src="./images/ai04-4.jpg" alt="ai_mobile_img"></div>
+          <div class="txt">
+            <p>엉또폭포</p>
+            <span>멋진 물줄기를 보여주는 특별한 폭포</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab_sheet">
+      <div class="flex">
+        <div class="ai_box ai">
+          <div class="img_box"><img src="./images/ai05-1.jpg" alt="ai_mobile_img"></div>
+          <div class="txt">
+            <p>금악오름</p>
+            <span>가볍게 산책하기 좋은 금악오름</span>
+          </div>
+        </div>
+        <div class="ai_box02 ai">
+          <div class="img_box"><img src="./images/ai05-2.jpg" alt="ai_mobile_img"></div>
+          <div class="txt">
+            <p>아부오름</p>
+            <span>동그란 삼나무 숲이 독특한 아부오름</span>
+          </div>
+        </div>
+        <div class="ai_box03 ai">
+          <div class="img_box"><img src="./images/ai05-3.jpg" alt="ai_mobile_img"></div>
+          <div class="txt">
+            <p>용눈이오름</p>
+            <span>능선의 아름다움을 뽐내는 오름</span>
+          </div>
+        </div>
+        <div class="ai_box04 ai">
+          <div class="img_box"><img src="./images/ai05-4.jpg" alt="ai_mobile_img"></div>
+          <div class="txt">
+            <p>다랑쉬오름</p>
+            <span>4계절 색채가 뚜렷한 오름의 여왕</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!--ai_tablet-->
+  <input type="checkbox" id="heart">
+  <input type="checkbox" id="heart02">
+  <input type="checkbox" id="heart03">
+  <input type="checkbox" id="heart04">
+  <input type="checkbox" id="heart05">
+  <section class="pick">
+    <div class="title">
+      <p>K-Artist Pick</p>
+      <span>k-아티스트가 추천하는 제주 명소를 확인해보세요.</span>
+      <div class="more_btn"><a href="#!">더보기</a></div>
+    </div>
+    <div class="pick_list">
+      <div class="up">
+        <div class="pick01"><a href="#!">
+          <div class="img_box"><img src="./images/k_mobile_01.jpg" alt="pick_img"></div>
+          <div class="txt">
+            <span>이효리's pick</span>
+            <p>새별오름</p>
+          </div>
+          <label for="heart" class="heart01"><img src="./images/heart.png" alt="heart_img"></label></a>
+        </div><!--pick01-->
+        <div class="pick01"><a href="#!">
+          <div class="img_box"><img src="./images/k_mobile_03.jpg" alt="pick_img"></div>
+          <div class="txt">
+            <span>지민's pick</span>
+            <p>스누피가든</p>
+          </div>
+          <label for="heart03" class="heart03"><img src="./images/heart.png" alt="heart_img"></label></a>
+        </div><!--pick03-->
+        <div class="pick01"><a href="#!">
+          <div class="img_box"><img src="./images/k_mobile_05.jpg" alt="pick_img"></div>
+          <div class="txt">
+            <span>박보검's pick</span>
+            <p>형제해안로</p>
+          </div>
+          <label for="heart05" class="heart05"><img src="./images/heart.png" alt="heart_img"></label></a>
+        </div><!--pick05-->
+      </div>
+      <div class="down">
+        <div class="pick01"><a href="#!">
+          <div class="img_box"><img src="./images/k_mobile_02.jpg" alt="pick_img"></div>
+          <div class="txt">
+            <span>아이유's pick</span>
+            <p>제주 곶자왈 숲</p>
+          </div>        
+          <label for="heart02" class="heart02"><img src="./images/heart.png" alt="heart_img"></label></a>
+        </div><!--pick02-->
+        <div class="pick01"><a href="#!">
+          <div class="img_box"><img src="./images/k_mobile_04.jpg" alt="pick_img"></div>
+          <div class="txt">
+            <span>소유's pick</span>
+            <p>금능해수욕장</p>
+          </div>
+          <label for="heart04" class="heart04"><img src="./images/heart.png" alt="heart_img"></label></a>
+        </div><!--pick04-->
+      </div>
+    </div>
+  </section><!--pick-->
+  <div class="rolling">
+    <div class="rolling_txt">
+      <span>VISIT JEJU</span>
+      <span>VISIT JEJU</span>
+      <span>VISIT JEJU</span>
+      <span>VISIT JEJU</span>
+      <span>VISIT JEJU</span>
+      <span>VISIT JEJU</span>
+      <span>VISIT JEJU</span>
+    </div>
+  </div><!--rolling-->
+  <section class="event">
+    <div class="title">
+      <p>지금 제주는
+      <span>제주의 다양한 축제·행사·이벤트를 확인해보세요.</span>
+      </p>
+      <div class="more_btn"><a href="./sub/sub.html">더보기</a></div>
+    </div>
+    <div class="event_box">
+      <div class="event01"><a href="#!">
+        <div class="img_box"><img src="./images/event_01.jpg" alt="event_img"></div>
+        <div class="txt">
+          <span>공연</span>
+          <p>2026 제주 상설공연</p>
+        </div></a>
+      </div><!--event01-->
+      <div class="event01"><a href="#!">
+        <div class="img_box"><img src="./images/event_02.jpg" alt="event_img"></div>
+        <div class="txt">
+          <span>행사</span>
+          <p>제주신화야행 살강길</p>
+        </div></a>
+      </div><!--event02-->
+      <div class="event01"><a href="#!">
+        <div class="img_box"><img src="./images/event_03.jpg" alt="event_img"></div>
+        <div class="txt">
+          <span>행사</span>
+          <p>제주국제크루즈포럼</p>
+        </div></a>
+      </div><!--event03-->
+      <div class="event01"><a href="#!">
+        <div class="img_box"><img src="./images/event_04.jpg" alt="event_img"></div>
+        <div class="txt">
+          <span>이벤트</span>
+          <p>2026 야크마을 밤산책</p>
+        </div></a>
+      </div><!--event04-->
+      <div class="event01"><a href="#!">
+        <div class="img_box"><img src="./images/event_05.jpg" alt="event_img"></div>
+        <div class="txt">
+          <span>이벤트</span>
+          <p>화산암반수 원정대</p>
+        </div></a>
+      </div><!--event05-->
+      <div class="event01"><a href="#!">
+        <div class="img_box"><img src="./images/event_06.jpg" alt="event_img"></div>
+        <div class="txt">
+          <span>행사</span>
+          <p>그래비티 퀘스트 제주</p>
+        </div></a>
+      </div><!--event06-->
+    </div><!--event_box-->
+  </section><!--event-->
+
+  <input type="checkbox" id="chk_map01">
+  <input type="checkbox" id="chk_map02">
+  <input type="checkbox" id="chk_map03">
+  <input type="checkbox" id="chk_map04">
+  <section class="path">
+    <div class="path_container">
+      <div class="title">
+        <p>오름길
+        <span>제주의 역사·문화·생태·경관 자원을 만날 수 있습니다.</span>
+      </p>
+        <div class="more_btn"><a href="#!">더보기</a></div>
+      </div>
+      <div class="course_box">
+        <div class="course01 course">
+          <p>1코스</p>
+          <div class="txt">
+            <span>시흥 - 광치기해변</span>
+            <span>15.1km (4-5시간 코스)</span>
+          </div>
+          <label for="chk_map01" class="chk_map">지도 보기</label>
+        </div>
+        <div class="sheet_box01 sheet_box">
+          <div class="sheet01 sheet">
+            <label for="chk_map01" class="close"><img src="./images/close.png" alt="close_icon"></label>
+            <img src="./images/path_course01.jpg" alt="course_img">
+            <!-- <p><strong>코스안내</strong><br>천아숲길 입구 - 임도삼거리 - 노로오름 삼거리 - 보림농장 삼거리</p> -->
+          </div>
+        </div>
+        <div class="course02 course">
+          <p>2코스</p>
+          <div class="txt">
+            <span>모슬포 - 무릉외갓집</span>
+            <span>17.3km (5-6시간 코스)</span>
+          </div>
+          <label for="chk_map02" class="chk_map">지도 보기</label>
+        </div>
+        <div class="sheet_box02 sheet_box">
+          <div class="sheet02 sheet">
+            <label for="chk_map02" class="close"><img src="./images/close.png" alt="close_icon"></label>
+            <img src="./images/path_course02.jpg" alt="course_img">
+            <!-- <p><strong>코스안내</strong><br>보림농장 삼거리 - 돌오름 삼거리 - 표고재베 삼거리 - 용바위 - 서귀포자연휴양림 입구</p> -->
+          </div>
+        </div>
+        <div class="course03 course">
+          <p>3코스</p>
+          <div class="txt">
+            <span>고내포구 - 광령</span>
+            <span>14.8km (5-6시간 코스)</span>
+          </div>
+          <label for="chk_map03" class="chk_map">지도 보기</label>
+        </div>
+        <div class="sheet_box03 sheet_box">
+          <div class="sheet03 sheet">
+            <label for="chk_map03" class="close"><img src="./images/close.png" alt="close_icon"></label>
+            <img src="./images/path_course03.jpg" alt="course_img">
+            <!-- <p><strong>코스안내</strong><br>서귀포자연휴양림 입구 - 도순천 - 무오법정사</p> -->
+          </div>
+        </div>
+        <div class="course04 course">
+          <p>4코스</p>
+          <div class="txt">
+            <span>하도 - 종달바당</span>
+            <span>11.3km (3-4시간 코스)</span>
+          </div>
+          <label for="chk_map04" class="chk_map">지도 보기</label>
+        </div>
+        <div class="sheet_box04 sheet_box">
+          <div class="sheet04 sheet">
+            <label for="chk_map04" class="close"><img src="./images/close.png" alt="close_icon"></label>
+            <img src="./images/path_course04.jpg" alt="course_img">
+            <!-- <p><strong>코스안내</strong><br>무오법정사 - 어점이악 삼거리 - 시오름 삼거리 - 돈내코탐방로</p> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <input type="checkbox" id="video01">
+  <input type="checkbox" id="video02">
+  <input type="checkbox" id="video03">
+  <input type="checkbox" id="video04">
+  <section class="video">
+    <div class="title">
+      <p>제주 생생소식통</p> 
+      <span>실제 여행객들의 제주 만족도를 확인해보세요.</span>
+    </div>
+    <div class="video_box">
+      <label for="video01" class="video01"><img src="./images/video_01.jpg" alt="video_img">
+        <span>제주 명소</span>
+        <p>제주 봄꽃<br>여행지 추천</p> 
+      </label>
+      <label for="video02" class="video01"><img src="./images/video_02.jpg" alt="video_img"> 
+        <span>제주 명소</span>     
+        <p>제주 동쪽 명소<br>BEST 5</p>
+      </label>
+      <label for="video02" class="video01"><img src="./images/video_03.jpg" alt="video_img">
+        <span>제주 여행</span>
+        <p>7월 제주도 여행<br>추천 BEST 10</p> 
+      </label>
+      <label for="video02" class="video01"><img src="./images/video_04.jpg" alt="video_img"> 
+        <span>제주 명소</span>
+        <p>제주 서귀포시<br>여행 관광지 추천</p>
+      </label>
+      <label for="video02" class="video01"><img src="./images/video_05.jpg" alt="video_img">  
+        <span>드라마 촬영지</span>
+        <p>제주 동쪽<br>산책로 '오조포구'</p>    
+      </label>
+      <label for="video02" class="video01"><img src="./images/video_06.jpg" alt="video_img"> 
+        <span>제주 여행</span>
+        <p>혼자 힐링 여행<br>추천 모음</p>  
+      </label>
+      <label for="video02" class="video01"><img src="./images/video_07.jpg" alt="video_img">
+        <span>제주 감성</span>
+        <p>제주 서쪽<br>감성코스 여행</p> 
+      </label>
+      <label for="video02" class="video01"><img src="./images/video_08.jpg" alt="video_img">
+        <span>제주 숙소</span>
+        <p>제주도 오션뷰<br>가성비 숙소 추천</p> 
+      </label>
+      <label for="video02" class="video01"><img src="./images/video_09.jpg" alt="video_img">
+        <span>제주 숙소</span>
+        <p>숙소에 정원이 있는<br>'한동곶길' 숙소</p> 
+      </label>
+      <label for="video02" class="video01"><img src="./images/video_10.jpg" alt="video_img">
+        <span>제주 여행</span>
+        <p>제주 남쪽<br>여행 코스 추천</p> 
+      </label>
+    </div>
+    <div class="slide_box">
+      <div class="slider"></div>
+    </div>
+  </section><!--video-->
+  <div class="footer_outer">
+    <div class="f_top">
+      <div class="jeju_01"><img src="./images/jeju_01.png" alt="jeju_logo_img"></div>
+      <div class="jeju_02"><img src="./images/jeju_02.png" alt="jeju_logo_img"></div>
+      <div class="jeju_03"><img src="./images/jeju_03.png" alt="jeju_logo_img"></div>
+      <div class="jeju_04"><img src="./images/jeju_04.png" alt="jeju_logo_img"></div>
+      <div class="jeju_05"><img src="./images/jeju_05.png" alt="jeju_logo_img"></div>
+      <div class="jeju_06"><img src="./images/jeju_06.png" alt="jeju_logo_img"></div>
+      <div class="jeju_01"><img src="./images/jeju_01.png" alt="jeju_logo_img"></div>
+      <div class="jeju_02"><img src="./images/jeju_02.png" alt="jeju_logo_img"></div>
+      <div class="jeju_03"><img src="./images/jeju_03.png" alt="jeju_logo_img"></div>
+      <div class="jeju_04"><img src="./images/jeju_04.png" alt="jeju_logo_img"></div>
+      <div class="jeju_05"><img src="./images/jeju_05.png" alt="jeju_logo_img"></div>
+      <div class="jeju_06"><img src="./images/jeju_06.png" alt="jeju_logo_img"></div>
+      <div class="jeju_01"><img src="./images/jeju_01.png" alt="jeju_logo_img"></div>
+      <div class="jeju_02"><img src="./images/jeju_02.png" alt="jeju_logo_img"></div>
+      <div class="jeju_03"><img src="./images/jeju_03.png" alt="jeju_logo_img"></div>
+      <div class="jeju_04"><img src="./images/jeju_04.png" alt="jeju_logo_img"></div>
+      <div class="jeju_05"><img src="./images/jeju_05.png" alt="jeju_logo_img"></div>
+      <div class="jeju_06"><img src="./images/jeju_06.png" alt="jeju_logo_img"></div>
+      <div class="jeju_01"><img src="./images/jeju_01.png" alt="jeju_logo_img"></div>
+      <div class="jeju_02"><img src="./images/jeju_02.png" alt="jeju_logo_img"></div>
+      <div class="jeju_03"><img src="./images/jeju_03.png" alt="jeju_logo_img"></div>
+      <div class="jeju_04"><img src="./images/jeju_04.png" alt="jeju_logo_img"></div>
+      <div class="jeju_05"><img src="./images/jeju_05.png" alt="jeju_logo_img"></div>
+      <div class="jeju_06"><img src="./images/jeju_06.png" alt="jeju_logo_img"></div>
+    </div>
+    <footer class="footer">
+      <div class="call">
+        <div class="sns_box">
+          <a href="#!"><i class="fa-brands fa-instagram insta"></i></a>
+          <a href="#!"><i class="fa-brands fa-youtube youtube"></i></a>
+          <a href="#!"><i class="fa-brands fa-facebook-f face"></i></a>
+        </div>
+        <span>고객센터</span>
+        <span>064-740-6000</span>
+      </div>
+      <div class="infor">
+        <div class="f_logo_box">
+          <div class="f_logo"><img src="./images/f_logo.png" alt="f_logo_img"></div>
+        </div>
+        <p class="addr">(63122) 제주특별자치도 제주시 선덕로 23(연동) 제주웰컴센터</p>
+        <p>제주관광공사 Tel : 064-740-6000~1   ㅣ    FAX : 064-740-6090</p>
+        <p class="mobile">사업자등록번호 : 616-82-21432</p>
+        <p class="mobile">관광불편신고 : 제주관광불편신고센터(1533-0082)</p>
+        <p class="pc">사업자등록번호 : 616-82-21432   ㅣ   관광불편신고 : 제주관광불편신고센터(1533-0082)</p>
+      </div>
+    </footer>
+  </div>
+  <aside class="top_btn"><a href="#!"><img src="./images/top.png" alt="top_icon"></a></aside>
+</body>
+</html>

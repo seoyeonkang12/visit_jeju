@@ -1,0 +1,1248 @@
+*{margin: 0; padding: 0;}
+li{list-style: none;}
+a{color: black; text-decoration: none;}
+img {display: block; width: 100%; height: auto;}
+
+html {
+  width: 100%;
+  overflow-x: hidden;
+  font-size: 16px;
+  color: #222;
+  font-family: "Noto Sans KR", sans-serif;
+}
+body { width: 100%; overflow-x: hidden; overflow-y: auto;}
+
+/******************** common ********************/
+$light-grey: #ddd;
+$middle-grey: #999;
+$dark-grey: #666;
+$point-color: #468432;
+$sub-color: #F1FFED;
+$white: #fff;
+
+@mixin flex {
+  display: flex;
+  align-items: center;
+}
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+/******************** breadcrum ********************/
+.breadcrum {
+  @include flex();
+  margin: 40px 10px 30px;
+  position: relative;
+
+  .home {
+    margin-right: 10px;
+
+    i {
+      font-size: 1.1rem;
+      color: $middle-grey;
+      transition: all 0.2s;
+      &:hover {
+        color: $point-color;
+      }
+    }
+  }
+  .bread {
+    font-size: 0.9rem;
+    color: $dark-grey;
+    position: relative;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: all 0.2s;
+    &:hover {
+      color: #222;
+    }
+
+    i {
+      font-size: 1rem;
+      color: $middle-grey;
+    }
+    .bread_box {
+      display: block;
+      height: 0;
+      opacity: 0;
+      overflow: hidden;
+      position: absolute;
+      top: 30px; left: -10px;
+      z-index: 1;
+      width: 100%;
+      background-color: $white;
+      border-radius: 8px;
+      transition: all 0.2s;
+
+      li {
+        padding: 5px 0;
+        text-align: center;
+        
+        a {
+          display: block;
+          font-size: 1rem;
+          color: $dark-grey;
+          transition: all 0.2s;
+        }
+        &:first-child a{
+          color: $point-color;
+          font-weight: 600;
+        }
+        &:hover a {
+          color: $point-color;
+          font-weight: 600;
+        }
+      }
+      &.active {
+        height: 172px;
+        padding: 5px 8px;
+        border: 1px solid $light-grey;
+        opacity: 1;
+      }
+    }//bread_box
+  }
+  .line {
+    @include size(1px, 15px);
+    background-color: $light-grey;
+    margin: 0 10px;
+  }
+  span {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+} //breadcrum
+
+
+// #bread {display: none;}
+// #bread:checked ~ .breadcrum .bread .bread_box {display: block;}
+// #bread ~ .breadcrum .bread .bread_box {display: none;}
+
+
+/******************** sub ********************/
+.sub {
+  margin: 0 10px 50px;
+
+  .title {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  .calender {
+    text-align: center;
+    margin-bottom: 15px;
+
+    p {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .cal_tab {
+      @include flex();
+      justify-content: space-between;
+      border-bottom: 1px solid $dark-grey;
+      padding-bottom: 15px;
+
+      img {
+        width: 8px;
+      }
+      span {
+        font-size: 1rem;
+        &.pc {display: none;}
+        &.tablet {display: none;}
+      }
+      span:nth-child(6){
+        background-color: $point-color;
+        padding: 5px 20px;
+        border-radius: 30px;
+        color: $white;
+      }
+    }
+  } //calender
+
+  .filter_txt {
+    display: flex;
+    justify-content: right;
+    .filter {
+      @include flex();
+      span {
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      img{
+        width: 12px;
+        margin-left: 5px;
+        cursor: pointer;
+      }
+      &:hover span {
+        font-weight: 500;
+      }
+    } //filter
+  }
+  .filter_outer {
+    // display: none;
+    height: 0;
+    opacity: 0;
+    overflow: hidden; 
+    transition: all 0.3s;
+
+    .filter_box {
+      position: relative; 
+      width: 100%;
+      border: 1px solid $middle-grey;
+      box-sizing: border-box;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 10px;
+      
+      .close {
+        position: absolute;
+        top: 10px; right: 10px;
+        opacity: 0.5;
+        transition: all 0.2s;
+
+        img {
+          @include size(15px, 15px);
+        }
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      >div {
+        display: flex;
+        justify-content: space-between;
+
+        p{
+          font-size: 1.1rem;
+          font-weight: 500;
+          width: 15%;
+        }
+        .label_box {
+          width: 100%;
+          margin-bottom: 15px;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 5px;
+
+          label {
+            font-size: 0.9rem;
+            color: $middle-grey;
+            border: 1px solid $middle-grey;
+            border-radius: 30px;
+            padding: 3px 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+            
+            &:hover {
+              background-color: $point-color;
+              border: 1px solid $point-color;
+              color: $white;
+            }
+          }
+        }
+        &.tab03 .label_box {margin-bottom: 0;}
+      }
+    } //filter_box
+    .btn_box {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
+
+      >div {
+        width: 120px;
+        padding: 7px 5px;
+        border-radius: 5px;
+        border: 1px solid $point-color;
+        text-align: center;
+        font-size: 0.9rem;
+        font-weight: 500;
+        cursor: pointer;
+
+        &.clear {
+          color: $point-color;
+          transition: all 0.2s;
+          &:hover {
+            background-color: $sub-color;
+          }
+        }
+        &.check {
+          color: $white;
+          background-color: $point-color;
+          transition: all 0.2s;
+          &:hover {
+            background-color: #138B4A;
+          }
+        }
+      }
+    } //btn_box
+    &.active {
+      height: 275px;
+      opacity: 1;
+    }
+  } //filter_outer
+
+  .event_box {
+    margin-top: 30px;
+
+    >div {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      >div {
+        width: calc((100% - 10px)/2);
+        margin-bottom: 30px;
+        position: relative;
+
+        &.tablet {display: none;}
+        &.pc {display: none;}
+
+        .img_box img {
+          border-radius: 15px;
+        }
+        .txt {
+          text-align: center;
+
+          .tx1 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 10px 0 5px;
+          }
+          p {
+            font-size: 1rem;
+            color: $dark-grey;
+            margin-bottom: 10px;
+          }
+          .sheet01 {
+            display: block;
+            text-align: left;
+            background-color: $white;
+            border: 1px solid $middle-grey;
+            box-sizing: border-box;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 15px;
+
+            p {
+              font-size: 0.9rem;
+              margin-bottom: 3px;
+              color: $middle-grey;
+            }
+          }
+          .btn_box {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+
+            .ticket {
+              width: 70%;
+              border: 1px solid $middle-grey;
+              box-sizing: border-box;
+              border-radius: 5px;
+              transition: all 0.2s;
+
+              a {
+                font-size: 1rem;
+                color: $middle-grey;
+                display: block;
+                padding: 6px 0;
+                transition: all 0.2s;
+              }
+              &:active {
+                border: 1px solid $point-color;
+                
+                a {
+                  color: $point-color;
+                  font-weight: 500;
+                }
+              }
+            }
+            .heart {
+              @include flex();
+              justify-content: center;
+              width: 30%;
+              border: 1px solid $middle-grey;
+              border-radius: 5px;
+              padding: 6px 0;
+              
+              span{display: none;}
+
+              img {
+                @include size(22px, 20px);
+              }
+              .heart_green {
+                display: none;
+              }
+            }
+          }
+        } //txt
+      } //event01 ~ event08
+      &.bot {
+        // display: none;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s;
+        &.show {
+          max-height: 3000px;
+          transition: all 0.3s;
+        }
+      }
+    } //top,bot
+  } //event_box
+
+  // .btns {
+    .more_btn {
+      display: block;
+      margin: 0 auto;
+      @include size(110px, 38px);
+      border:  1px solid $middle-grey;
+      box-sizing: border-box;
+      border-radius: 50px;
+      text-align: center;
+      line-height: 36px;
+      color: $middle-grey;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+      cursor: pointer;
+
+      &.fold_btn {
+        display: none;
+      }
+      &:active {
+        border: 1px solid $point-color;
+        background-color: $point-color;
+        color: $white;
+      }
+    }
+  // }
+} //sub 
+
+
+#tab01-1, #tab01-2, #tab01-3, #tab02-1, #tab02-2, #tab02-3, #tab02-4, #tab02-5, #tab02-6, #tab03-1, #tab03-2, #tab03-3, #tab03-4, #tab03-5 {display: none;}
+
+#tab01-1:checked ~ .sub .filter_box .tab01 .label_box .tab01-1,
+#tab01-2:checked ~ .sub .filter_box .tab01 .label_box .tab01-2,
+#tab01-3:checked ~ .sub .filter_box .tab01 .label_box .tab01-3,
+#tab02-1:checked ~ .sub .filter_box .tab02 .label_box .tab02-1,
+#tab02-2:checked ~ .sub .filter_box .tab02 .label_box .tab02-2,
+#tab02-3:checked ~ .sub .filter_box .tab02 .label_box .tab02-3,
+#tab02-4:checked ~ .sub .filter_box .tab02 .label_box .tab02-4,
+#tab02-5:checked ~ .sub .filter_box .tab02 .label_box .tab02-5,
+#tab02-6:checked ~ .sub .filter_box .tab02 .label_box .tab02-6,
+#tab03-1:checked ~ .sub .filter_box .tab03 .label_box .tab03-1,
+#tab03-2:checked ~ .sub .filter_box .tab03 .label_box .tab03-2,
+#tab03-3:checked ~ .sub .filter_box .tab03 .label_box .tab03-3,
+#tab03-4:checked ~ .sub .filter_box .tab03 .label_box .tab03-4,
+#tab03-5:checked ~ .sub .filter_box .tab03 .label_box .tab03-5  {
+  background-color: $point-color;
+  border: 1px solid $point-color;
+  color: $white;
+}
+
+/******************** event ********************/
+#event01, #event02, #event03, #event04, #event05, #event06, #event07, #event08 {display: none;}
+
+#heart01, #heart02, #heart03, #heart04, #heart05, #heart06, #heart07, #heart08, #heart09, #heart10, #heart11, #heart12, #heart13, #heart14, #heart15, #heart16 {display: none;}
+
+#heart01:checked ~ .sub .event_box .top .event01 .txt .btn_box .heart span,
+#heart02:checked ~ .sub .event_box .top .event02 .txt .btn_box .heart span,
+#heart03:checked ~ .sub .event_box .top .event03 .txt .btn_box .heart span,
+#heart04:checked ~ .sub .event_box .top .event04 .txt .btn_box .heart span,
+#heart05:checked ~ .sub .event_box .top .event05 .txt .btn_box .heart span,
+#heart06:checked ~ .sub .event_box .top .event06 .txt .btn_box .heart span,
+#heart13:checked ~ .sub .event_box .top .event07 .txt .btn_box .heart span,
+#heart14:checked ~ .sub .event_box .top .event08 .txt .btn_box .heart span,
+
+#heart07:checked ~ .sub .event_box .bot .event01 .txt .btn_box .heart span,
+#heart08:checked ~ .sub .event_box .bot .event02 .txt .btn_box .heart span,
+#heart09:checked ~ .sub .event_box .bot .event03 .txt .btn_box .heart span,
+#heart10:checked ~ .sub .event_box .bot .event04 .txt .btn_box .heart span,
+#heart11:checked ~ .sub .event_box .bot .event05 .txt .btn_box .heart span,
+#heart12:checked ~ .sub .event_box .bot .event06 .txt .btn_box .heart span,
+#heart15:checked ~ .sub .event_box .bot .event07 .txt .btn_box .heart span,
+#heart16:checked ~ .sub .event_box .bot .event08 .txt .btn_box .heart span {
+  color: $point-color;
+  font-weight: 500;
+}
+#heart01:checked ~ .sub .event_box .top .event01 .txt .btn_box .heart .heart_green,
+#heart02:checked ~ .sub .event_box .top .event02 .txt .btn_box .heart .heart_green,
+#heart03:checked ~ .sub .event_box .top .event03 .txt .btn_box .heart .heart_green,
+#heart04:checked ~ .sub .event_box .top .event04 .txt .btn_box .heart .heart_green,
+#heart05:checked ~ .sub .event_box .top .event05 .txt .btn_box .heart .heart_green,
+#heart06:checked ~ .sub .event_box .top .event06 .txt .btn_box .heart .heart_green,
+#heart13:checked ~ .sub .event_box .top .event07 .txt .btn_box .heart .heart_green,
+#heart14:checked ~ .sub .event_box .top .event08 .txt .btn_box .heart .heart_green,
+
+#heart07:checked ~ .sub .event_box .bot .event01 .txt .btn_box .heart .heart_green,
+#heart08:checked ~ .sub .event_box .bot .event02 .txt .btn_box .heart .heart_green,
+#heart09:checked ~ .sub .event_box .bot .event03 .txt .btn_box .heart .heart_green,
+#heart10:checked ~ .sub .event_box .bot .event04 .txt .btn_box .heart .heart_green,
+#heart11:checked ~ .sub .event_box .bot .event05 .txt .btn_box .heart .heart_green,
+#heart12:checked ~ .sub .event_box .bot .event06 .txt .btn_box .heart .heart_green,
+#heart15:checked ~ .sub .event_box .bot .event07 .txt .btn_box .heart .heart_green,
+#heart16:checked ~ .sub .event_box .bot .event08 .txt .btn_box .heart .heart_green {
+  display: flex;
+}
+
+#heart01:checked ~ .sub .event_box .top .event01 .txt .btn_box .heart img,
+#heart02:checked ~ .sub .event_box .top .event02 .txt .btn_box .heart img,
+#heart03:checked ~ .sub .event_box .top .event03 .txt .btn_box .heart img,
+#heart04:checked ~ .sub .event_box .top .event04 .txt .btn_box .heart img,
+#heart05:checked ~ .sub .event_box .top .event05 .txt .btn_box .heart img,
+#heart06:checked ~ .sub .event_box .top .event06 .txt .btn_box .heart img,
+#heart13:checked ~ .sub .event_box .top .event07 .txt .btn_box .heart img,
+#heart14:checked ~ .sub .event_box .top .event08 .txt .btn_box .heart img,
+
+#heart07:checked ~ .sub .event_box .bot .event01 .txt .btn_box .heart img,
+#heart08:checked ~ .sub .event_box .bot .event02 .txt .btn_box .heart img,
+#heart09:checked ~ .sub .event_box .bot .event03 .txt .btn_box .heart img,
+#heart10:checked ~ .sub .event_box .bot .event04 .txt .btn_box .heart img,
+#heart11:checked ~ .sub .event_box .bot .event05 .txt .btn_box .heart img,
+#heart12:checked ~ .sub .event_box .bot .event06 .txt .btn_box .heart img,
+#heart15:checked ~ .sub .event_box .bot .event07 .txt .btn_box .heart img,
+#heart16:checked ~ .sub .event_box .bot .event08 .txt .btn_box .heart img {
+  display: none;
+}
+#heart01:checked ~ .sub .event_box .top .event01 .txt .btn_box .heart,
+#heart02:checked ~ .sub .event_box .top .event02 .txt .btn_box .heart,
+#heart03:checked ~ .sub .event_box .top .event03 .txt .btn_box .heart,
+#heart04:checked ~ .sub .event_box .top .event04 .txt .btn_box .heart,
+#heart05:checked ~ .sub .event_box .top .event05 .txt .btn_box .heart,
+#heart06:checked ~ .sub .event_box .top .event06 .txt .btn_box .heart,
+#heart13:checked ~ .sub .event_box .top .event07 .txt .btn_box .heart,
+#heart14:checked ~ .sub .event_box .top .event08 .txt .btn_box .heart,
+
+#heart07:checked ~ .sub .event_box .bot .event01 .txt .btn_box .heart,
+#heart08:checked ~ .sub .event_box .bot .event02 .txt .btn_box .heart,
+#heart09:checked ~ .sub .event_box .bot .event03 .txt .btn_box .heart,
+#heart10:checked ~ .sub .event_box .bot .event04 .txt .btn_box .heart,
+#heart11:checked ~ .sub .event_box .bot .event05 .txt .btn_box .heart,
+#heart12:checked ~ .sub .event_box .bot .event06 .txt .btn_box .heart,
+#heart15:checked ~ .sub .event_box .bot .event07 .txt .btn_box .heart,
+#heart16:checked ~ .sub .event_box .bot .event08 .txt .btn_box .heart {
+  background-color:$sub-color;
+  border: 1px solid $point-color;
+}
+
+#more, #fold {display: none;}
+#more:checked ~ .sub .event_box .bot {display: flex;}
+#fold:checked ~ .sub .event_box .bot {display: none;}
+
+#more:checked ~ .sub .btns .more_btn {display: none;}
+#more:checked ~ .sub .btns .fold_btn {display: block;}
+#fold:checked ~ .sub .btns .more_btn {display: block;}
+#fold:checked ~ .sub .btns .fold_btn {display: none;}
+
+/******************** footer ********************/
+@keyframes f_rolling {
+  0% {transform: translateX(0);}
+  100% {transform: translateX(-50%);}
+}
+
+.footer_outer {
+  border-top: 1px solid $light-grey;
+
+  .f_top {
+    @include flex();
+    background-color: $white;
+    flex-wrap: nowrap;
+    padding: 8px 0;
+    width: max-content;
+    animation: f_rolling 30s linear infinite;
+
+    div {
+      margin-right: 20px;
+
+      &.jeju_01 img{
+        width: 110px;
+      }
+      &.jeju_02 img {
+        width: 120px;
+      }
+      &.jeju_03 img {
+        width: 86px;
+      }
+      &.jeju_04 img {
+        width: 130px;
+      }
+      &.jeju_05 img {
+        width: 110px;
+      }
+      &.jeju_06 img {
+        width: 96px;
+      }
+    }
+  } //f_top
+  
+  .footer {
+    background-color: $point-color;
+    padding: 30px 10px;
+
+    .sns_box {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 15px;
+
+      a {
+        display: block;
+        background-color: rgba(255, 255, 255, 0.3);
+        width: 45px; height: 45px;
+        border-radius: 6px;
+        text-align: center;
+
+        i {
+          font-size: 1.3rem;
+          line-height: 45px;
+          color: $white;
+          opacity: 0.5;
+        }
+        &:active i {
+          opacity: 1;
+        }
+      }
+    } //sns_box
+    span {
+      font-size: 1.3rem;
+      color: $white;
+      font-weight: 600;
+    }
+    .f_logo_box {
+      margin-top: 35px;
+      @include flex();
+      margin-bottom: 15px;
+
+      .f_logo {
+        width: 130px;
+        margin-right: 15px;
+      }
+      // .f_jeju {
+      //   width: 120px;
+      // }
+    }
+    p {
+      font-size: 0.8rem;
+      color: $white;
+      opacity: 0.7;
+      font-weight: 300;
+      margin-bottom: 3px;
+      
+      &.addr {
+        font-weight: 400;
+        opacity: 1;
+      }
+      &.pc {display: none;}
+    }
+  } //footer
+} //footer_outer
+
+/******************** top_btn ********************/
+.top_btn {
+  @include size(50px, 50px);
+    position: fixed;
+    bottom: 10px; right: 10px;
+    background-color: $white;
+    border: 1px solid $point-color;
+    border-radius: 50%;
+    z-index: 10;
+  a {
+    @include size(50px, 50px);
+    border-radius: 50%;
+    @include flex();
+    justify-content: center;
+
+    img {
+      @include size(20px, 20px);
+    }
+  }
+  &:active {
+    background-color: $sub-color;
+  }
+}
+
+
+/******************** tablet ********************/
+@media all and (min-width: 601px) {
+  .breadcrum {
+    margin: 50px 15px 40px;
+
+    .home {
+      i  {
+        font-size: 1.3rem;
+      }
+    }
+    .bread {
+      font-size: 1.1rem;
+
+      i{
+        font-size: 1rem;
+      }
+      .bread_box {
+        top: 35px; left: -16px;
+
+        li{
+          padding: 6px 0;
+          a {
+            font-size: 1.1rem;
+          }
+        }
+        &.active {
+          height: 185px;
+          padding: 6px 11px;
+        }
+      }
+    }
+    .line {
+      @include size(1px, 17px);
+    }
+    span {
+      font-size: 1.1rem;
+    }
+  } //breadcrum 
+
+
+  .sub {
+    margin: 0 15px 70px;
+
+    .title {
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+    }
+    .calender {
+      margin-bottom: 20px;
+      p {
+        font-size: 1.4rem;
+      }
+      .cal_tab {
+        padding-bottom: 20px;
+        img {
+          width: 10px;
+        }
+        span {
+          font-size: 1.1rem;
+          &.tablet {display: block;}
+        }
+      }
+    } //calender
+
+    .filter {
+      font-size: 1.1rem;
+    }
+    .filter_outer {
+      .filter_box {
+        padding: 30px;
+        margin-top: 15px;
+
+        .close {
+          cursor: pointer;
+          top: 15px; right: 15px;
+          img {
+            @include size(17px, 17px);
+          }
+        }
+        >div {
+          .label_box {
+            gap: 8px;
+          }
+        }
+      } //filter_box
+    } //filter_outer
+
+    .event_box {
+      margin-top: 40px;
+      >div {
+        >div {
+          width: calc((100% - 20px)/3);
+          margin-bottom: 40px;
+          &.tablet {
+            display: block;
+          }
+          .img_box img {
+            border-radius: 20px;
+          }
+          .txt {
+            .tx1 {
+              font-size: 1.2rem;
+            }
+            p {
+              font-size: 1.1rem;
+            }
+            .btn_box {
+              .ticket {
+                width: 50%;
+              }
+              .heart {
+                width: 50%;
+                span {
+                  display: block;
+                  color: $middle-grey;
+                  font-size: 1rem;
+                  margin-right: 5px;
+                }
+                img {
+                  @include size(18px, 16px);
+                }
+              }
+            }
+          }
+        }
+      }
+    } //event_box
+  } //sub
+
+  .footer_outer {
+    .f_top {
+      padding: 10px 0;
+
+      div {
+        margin-right: 30px;
+        
+        &.jeju_01 img{
+          width: 150px;
+        }
+        &.jeju_02 img {
+          width: 160px;
+        }
+        &.jeju_03 img {
+          width: 126px;
+        }
+        &.jeju_04 img {
+          width: 170px;
+        }
+        &.jeju_05 img {
+          width: 150px;
+        }
+        &.jeju_06 img {
+          width: 136px;
+        }
+      }
+    } //f_top
+    .footer {
+      padding: 40px 15px;
+      @include flex();
+      justify-content: space-between;
+
+      .call {
+        order: 1;
+        text-align: right;
+        .sns_box {
+          justify-content: right;
+        }
+        span {
+          font-size: 1.5rem;
+          margin-left: 8px;
+        }
+      }
+      .infor {
+        .f_logo_box {
+          margin: 0 0 15px;
+          .f_logo {
+            width: 150px;
+            margin-right: 20px;
+          }
+          // .f_jeju {
+          //   width: 140px;
+          // }
+        }
+        p {
+          font-size: 1rem;
+        }
+      }
+    } //footer
+  } //footer_outer
+  
+  .top_btn {
+    @include size(65px, 65px);
+    bottom: 15px; right: 15px;
+    a {
+      @include size(65px, 65px);
+      img {
+        @include size(25px, 25px);
+      }
+    }
+  }
+}
+
+@media all and (min-width: 769px) {
+  html {font-size: 18px;}
+  .breadcrum {
+    margin: 60px 15px 50px;
+
+    .home {
+      i  {
+        font-size: 1.4rem;
+      }
+    }
+    .bread {
+      font-size: 1.2rem;
+
+      i{
+        font-size: 1.1rem;
+      }
+      .bread_box {
+        top: 40px; left: -15px;
+
+        li{
+          padding: 8px 0;
+          a {
+            font-size: 1.1rem;
+          }
+        }
+        &.active {
+          height: 226px;
+          padding: 8px 11px;
+        }
+      }
+    }
+    .line {
+      @include size(1px, 24px);
+    }
+    span {
+      font-size: 1.2rem;
+    }
+  } //breadcrum 
+
+
+  .sub {
+    .title {
+      font-size: 1.9rem;
+    }
+    .calender {
+      p {
+        font-size: 1.5rem;
+      }
+      .cal_tab {
+        img {
+          width: 11px;
+        }
+      }
+    } //calender
+
+    .filter {
+      font-size: 1.1rem;
+    }
+    .filter_outer {
+      .filter_box {
+        >div {
+          .label_box {
+            gap: 10px;
+            margin-bottom: 20px;
+          }
+        }
+      } //filter_box
+      .btn_box {
+        gap: 15px;
+        >label {
+          padding: 7px 8px;
+          width: 140px;
+        }
+      }
+    } //filter_outer
+
+    .event_box {
+      >div {
+        >div {
+          width: calc((100% - 45px)/4);
+          margin-bottom: 40px;
+          &.tablet, &.pc {
+            display: block;
+          }
+          .img_box img {
+            border-radius: 20px;
+          }
+          .txt {
+            .tx1 {
+              font-size: 1.1rem;
+              margin: 15px 0 5px;
+            }
+            p {
+              font-size: 1rem;
+            }
+            .btn_box {
+              .ticket {
+                width: 50%;
+                transition: all 0.2s;
+                a {
+                  font-size: 0.9rem;
+                  padding: 7px 0;
+                }
+                &.hover {
+                  border: 1px solid $point-color;
+                  a {
+                    color: $point-color;
+                    font-weight: 500;
+                  }
+                }
+              }
+              .heart {
+                width: 50%;
+                span {
+                  display: block;
+                  color: $middle-grey;
+                  font-size: 0.9rem;
+                  margin-right: 5px;
+                }
+                img {
+                  @include size(18px, 17px);
+                }
+              }
+            }
+          }
+        }
+      }
+    } //event_box
+    .btns {
+      label {
+        &.hover {
+          border: 1px solid $point-color;
+          background-color: $point-color;
+          color: $white;
+        }
+      }
+    }
+  } //sub
+
+  .footer_outer {
+    .footer {
+      padding: 50px 15px;
+
+      .call {
+        span {font-size: 1.5rem;}
+      }
+      .infor {
+        .f_logo_box {
+          margin-bottom: 25px;
+          .f_logo {
+            width: 175px;
+          }
+        }
+        p {
+          font-size: 0.8rem;
+        }
+      }
+    } //footer
+  } //footer_outer
+}
+
+@media all and (min-width: 1025px) {
+  .breadcrum {
+    width: 1245px;
+    margin: 50px auto 40px;
+
+    .home {
+      i  {
+        font-size: 1.2rem;
+      }
+    }
+    .bread {
+      font-size: 1rem;
+      cursor: pointer;
+
+      i{
+        font-size: 0.9rem;
+      }
+      .bread_box {
+        cursor: pointer;
+        top: 40px; left: -15px;
+
+        li{
+          padding: 8px 0;
+          a {
+            font-size: 0.9rem;
+          }
+        }
+        &.active {
+          height: 200px;
+        }
+      }
+    }
+    .line {
+      @include size(1px, 24px);
+    }
+    span {
+      font-size: 1rem;
+    }
+  } //breadcrum 
+
+
+  .sub {
+    width: 1245px;
+    margin: 0 auto 90px;
+    .title {
+      font-size: 1.9rem;
+    }
+    .calender {
+      p {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+      }
+      .cal_tab {
+        padding-bottom: 25px;
+        img {
+          width: 11px;
+        }
+        span {
+          font-size: 1rem;
+          &.pc {display: block;}
+        }
+      }
+    } //calender
+
+    .filter {
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+    .filter_outer {
+      .filter_box {
+        >div {
+          .label_box {
+            gap: 10px;
+            margin-bottom: 20px;
+            label {cursor: pointer;}
+          }
+        }
+      } //filter_box
+      .btn_box {
+        gap: 15px;
+        >label {
+          cursor: pointer;
+          padding: 7px 8px;
+          width: 140px;
+        }
+      }
+    } //filter_outer
+
+    .event_box {
+      >div {
+        >div {
+          width: calc((100% - 45px)/4);
+          margin-bottom: 40px;
+          &.tablet, &.pc {
+            display: block;
+          }
+          .img_box img {
+            border-radius: 20px;
+          }
+          .txt {
+            .tx1 {
+              font-size: 1.1rem;
+              margin: 15px 0 5px;
+            }
+            p {
+              font-size: 1rem;
+            }
+            .btn_box {
+              .ticket {
+                width: 50%;
+                a {
+                  font-size: 0.9rem;
+                  padding: 7px 0;
+                }
+                &:hover {
+                  border: 1px solid $point-color;
+                  a {
+                    color: $point-color;
+                    font-weight: 500;
+                  }
+                }
+              }
+              .heart {
+                width: 50%;
+                transition: all 0.2s;
+                cursor: pointer;
+                span {
+                  display: block;
+                  color: $middle-grey;
+                  font-size: 0.9rem;
+                  margin-right: 5px;
+                  transition: all 0.2s;
+                }
+                img {
+                  @include size(18px, 17px);
+                }
+                &:hover {
+                  background-color: $sub-color;
+                  border: 1px solid $point-color;
+                  span {
+                    color: $point-color;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    } //event_box
+    .btns {
+      label {
+        &:hover {
+          border: 1px solid $point-color;
+          background-color: $point-color;
+          color: $white;
+        }
+      }
+    }
+  } //sub
+
+  .footer_outer {
+    background-color: $point-color;
+    .footer {
+      width: 1245px;
+      margin: 0 auto;
+      padding: 60px 0;
+
+      .call {
+        .sns_box {
+          margin-bottom: 10px;
+          a {
+            width: 35px; height: 35px;
+            i {
+              font-size: 1rem;
+              line-height: 35px;
+              transition: all 0.2s;
+            }
+            &:hover i {
+              opacity: 1;
+            }
+          }
+        } //sns_box
+        span {
+          font-size: 1.4rem;
+        }
+      } //call
+      .infor {
+        .f_logo_box {
+          margin-top: 0;
+          .f_logo {
+            width: 150px;
+            margin-right: 0;
+          }
+        }
+        p {
+          font-size: 0.7rem;
+          &.pc {display: block;}
+          &.mobile {display: none;}
+        }
+      }
+    } //footer
+  } //footer_outer
+
+  .top_btn {
+    @include size(60px, 60px);
+    bottom: -100px; right: 30px;
+    transition: all 0.3s;
+    a {
+      @include size(60px, 60px);
+      img {
+        @include size(20px, 20px);
+      }
+    }
+    &:hover {
+      background-color: $sub-color;
+    }
+  }
+}
