@@ -5,7 +5,7 @@
 > 제주도의 다양한 관광 정보와 여행 콘텐츠를 쉽고 편리하게 탐색할 수 있도록 제작한 비짓제주 홈페이지 리뉴얼 프로젝트입니다.
 > PC, 태블릿, 모바일 등 다양한 기기 환경에 대응하는 반응형 웹을 구현하여 화면 크기에 관계없이 일관된 사용자 경험을 제공하고자 했습니다.
 
-🔗 [Visit Jeju 웹사이트 바로가기](https://seoyeonkang12.github.io/visit_jeju/))
+🔗 [Visit Jeju 웹사이트 바로가기](https://seoyeonkang12.github.io/visit_jeju/)
 
 ## 📌 프로젝트 개요
 
@@ -28,231 +28,172 @@ Visit Jeju는 제주도의 관광 정보와 여행 콘텐츠를 직관적으로 
 ## 🎯 프로젝트 목표
 
 - 제주 관광 정보를 직관적으로 탐색할 수 있는 UI 구성
-- PC · 태블릿 · 모바일 화면 크기에 대응하는 반응형 레이아웃 구현
-- 디바이스별 콘텐츠 배치와 가독성을 고려한 사용자 경험 개선
-- 일관된 디자인 시스템을 적용해 통일감 있는 인터페이스 구성
+- 디바이스별 레이아웃 최적화를 통한 사용성 개선
+- 콘텐츠 특성에 맞는 인터랙션으로 정보 탐색 편의성 향상
 
 ## ✨ 주요 기능
 
-### 1. 메인 페이지
+### 1. 반응형 웹 구현
 
-- 베스트 상품 및 컬러별 상품 슬라이더 구현
-- 가로 스크롤을 활용한 상품 목록 구성
-- 스크롤 위치에 따른 진행 바 표시
+- PC·태블릿·모바일 환경에 맞춘 레이아웃 구성
+- 디바이스별 콘텐츠 배치 및 가독성 최적화
 
-<!-- 메인 페이지 GIF 삽입 -->
+<!-- PC·태블릿·모바일 화면 캡처 이미지 삽입 -->
 
-### 2. 상품 상세 페이지
+### 2. AI 추천 콘텐츠 레이아웃
 
-- 상품 수량 변경 및 최소·최대 구매 수량 제한
-- 상품 상세정보, 리뷰, 배송 안내 탭 구현
+- 모바일 환경에 맞춘 AI 추천 콘텐츠 레이아웃 재구성
+- 화면 크기에 따른 콘텐츠 구조 전환
 
-<!-- 상품 상세 페이지 GIF 삽입 -->
+<!-- PC·태블릿과 모바일 AI 추천 화면 비교 이미지 삽입 -->
 
-### 3. 로그인 및 회원가입
+### 3. 오름길 코스 아코디언 UI
 
-- JSON 데이터를 활용한 사용자 정보 확인
-- 아이디 저장 기능 구현
-- 전체 동의 및 개별 동의 체크박스 연동
-  
-<!-- 로그인 및 회원가입 GIF 삽입 -->
+- 코스 선택 시 해당 지도 영역이 펼쳐지는 인터랙션 구현
+- 모바일 화면 공간을 고려한 선택형 콘텐츠 구성
+
+<!-- 코스 선택 전후 동작 GIF 삽입 -->
+
+### 4. 콘텐츠 인터랙션
+
+- 탭 선택에 따른 콘텐츠 전환
+- Swiper 자동 슬라이드 및 페이지네이션
+- `IntersectionObserver`를 활용한 스크롤 진입 애니메이션 구현
+
+<!-- 탭 전환 및 슬라이드 동작 GIF 삽입 -->
 
 ## 💻 핵심 코드 구현
 
-### 1. 가로 스크롤 및 진행률 표시
+### 1. 반응형 콘텐츠 레이아웃
 
-가로 스크롤 콘텐츠에서 사용자의 현재 탐색 위치를 직관적으로 확인할 수 있도록 진행률 표시 기능을 구현했습니다.  
+디바이스별 사용 환경에 맞춰 모바일과 태블릿·PC의 콘텐츠 구조를 분리하고, 화면 너비에 따른 레이아웃 전환을 구현했습니다.
 
 **💡 셀프 코드 리뷰**
 
-- `scrollWidth`와 `clientWidth`로 전체 스크롤 가능 거리 계산
-- `scrollLeft`를 활용해 현재 스크롤 위치 확인
-- 전체 거리 대비 현재 위치의 비율 계산 및 진행률 바 갱신
+- 미디어 쿼리를 활용한 디바이스별 레이아웃 전환
+- 모바일과 태블릿·PC 콘텐츠 구조 분리
+- PC 환경에서 이미지 확대 호버 효과 적용
 
-~~~javascript
-$(window).on('mousemove', function(e) {
-  if (!isDrag || !currentSheet) return;
+~~~css
+.ai_mobile {
+  display: block;
+}
 
-  const moveX = e.pageX - startX;
-  currentSheet.scrollLeft(startScroll - moveX);
-  updateBar(currentSheet);
-});
-~~~
-~~~javascript
-function updateBar(sheet) {
-  const maxScroll = sheet[0].scrollWidth - sheet[0].clientWidth;
+.ai_tablet {
+  display: none;
+}
 
-  if (maxScroll <= 0) {
-    bar.css('width', '100%');
-    return;
+/* tablet: 601px 이상 */
+@media all and (min-width: 601px) {
+  .ai_mobile {
+    display: none;
   }
 
-  const percent = sheet.scrollLeft() / maxScroll * 100;
-  bar.css('width', percent + '%');
+  .ai_tablet {
+    display: block;
+  }
+}
+
+/* PC: 1025px 이상 */
+@media all and (min-width: 1025px) {
+  .ai_tablet {
+    .tab_sheet {
+      .ai {
+        &:hover {
+          .img_box {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
 }
 ~~~
 
-### 2. 상품 수량 제어
+### 2. 오름길 코스 아코디언 UI
 
-상품 구매 수량이 최소 1개, 최대 10개로 제한되도록 구현하고, 제한에 도달하면 안내 메시지가 표시되도록 구성했습니다.
+코스 선택 시 해당 코스의 지도 영역이 펼쳐지도록 구현했습니다.
 
 **💡 셀프 코드 리뷰**
 
-- 수량 증가·감소에 따른 최소·최대 구매 가능 수량 검사
-- 최대 10개 초과 및 최소 1개 미만 시 수량 보정
-- 구매 수량 제한에 따른 안내 메시지 표시
+- `:checked` 선택자를 활용한 지도 영역 표시 제어
+- 선택한 코스에 따른 활성화 스타일 적용
+- JavaScript 없이 HTML과 CSS를 활용한 인터랙션 구현
 
-~~~javascript
-let cnt = 1;
+~~~css
+/* 코스별 지도 표시 */
+#chk_map01:checked ~ .path .course_box .sheet_box .sheet01,
+#chk_map02:checked ~ .path .course_box .sheet_box .sheet02,
+#chk_map03:checked ~ .path .course_box .sheet_box .sheet03,
+#chk_map04:checked ~ .path .course_box .sheet_box .sheet04 {
+  display: flex;
+}
 
-$('.add').click(function(){
-  cnt++;
-
-  if(cnt>10){
-    cnt = 10;
-    alert('최대 10개까지만 구매 가능합니다.');
-  }
-
-  $('.count_num').text(cnt);
-});
-
-$('.min').click(function(){
-  cnt--;
-
-  if(cnt<1){
-    cnt = 1;
-    alert('1개 이상부터 구매 가능합니다.');
-  }
-
-  $('.count_num').text(cnt);
-}); //count_event
+/* 기본 지도 숨김 */
+#chk_map01 ~ .path .course_box .sheet_box .sheet01,
+#chk_map02 ~ .path .course_box .sheet_box .sheet02,
+#chk_map03 ~ .path .course_box .sheet_box .sheet03,
+#chk_map04 ~ .path .course_box .sheet_box .sheet04 {
+  display: none;
+}
 ~~~
 
-### 3. 로그인 및 약관 동의 처리
+### 3. 탭 전환 및 스크롤 애니메이션
 
-JSON 데이터를 활용해 사용자 정보를 확인하고, 아이디 저장과 약관 동의 기능을 통해 로그인 및 회원가입 과정을 편리하게 이용할 수 있도록 구성했습니다.
+탭 선택에 따라 해당 콘텐츠가 활성화되도록 구현하고, 콘텐츠가 화면에 진입할 때 스크롤 애니메이션이 실행되도록 구성했습니다.
 
 **💡 셀프 코드 리뷰**
 
-- `fetch()`를 활용한 JSON 회원 데이터 호출
-- `find()`로 입력 정보와 일치하는 사용자 탐색
-- `localStorage`를 활용한 아이디 저장 및 불러오기
-- 전체·개별 약관 체크박스 간 상태 연동
-- 필수 약관 동의 여부 및 페이지 이동 처리
+- click 이벤트를 활용한 탭 전환 기능 구현
+- classList를 활용한 탭 및 콘텐츠 활성화 상태 관리
+- `IntersectionObserver`를 활용한 스크롤 진입 감지 및 애니메이션 적용
 
-<details>
-  <summary>login.js</summary>
+~~~javascript
+tabs.forEach((tab, index) => {
+  tab.addEventListener('click', function() {
+    tabs.forEach(item => item.classList.remove('on_tab'));
+    sheets.forEach(item => item.classList.remove('on_sheet'));
   
-~~~javascript
-const saveId = localStorage.getItem('saveId');
-
-if(saveId) {
-  userId.value = saveId;
-  idSave.checked = true;
-}
-
-const user = users.find(function(user) {
-  return user.id === userId.value &&
-  user.pw === userPw.value;
-});
-
-if(user){
-  if(idSave.checked){
-      localStorage.setItem('saveId', userId.value);
-  } else {
-      localStorage.removeItem('saveId');
-  }
-
-  alert('로그인되었습니다.');
-  location.href = '../index.html';
-} else {
-  alert('아이디 또는 비밀번호가 일치하지 않습니다.');
-}
-//login_pw
-~~~
-</details>
-
-<details>
-  <summary>agreement.js</summary>
-  
-~~~javascript
-function totalCheck() {
-  if(totalTerms.checked) {
-    termsEls.forEach((termsEl) => {
-      termsEl.checked = true;
-    });
-  } else{
-    termsEls.forEach((termsEl) => {
-      termsEl.checked = false;
-    });
-  }
-} //totalCheck
-
-function termsCheck() {
-  if(terms01.checked === true && terms02.checked === true && terms03.checked === true){
-    totalTerms.checked = true;
-  } else {
-    totalTerms.checked = false;
-  }
-} //termsCheck()
+    tab.classList.add('on_tab');
+    sheets[index].classList.add('on_sheet');
+  });
+}); //ai_mobile_tablet_tab
 ~~~
 ~~~javascript
-nextBtn.addEventListener('click', function(){
-  let allChecked = true;
-
-  requiredTerms.forEach(function(term) {
-    if(!term.checked){
-      allChecked = false;
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
     }
   });
-
-  if(!allChecked){
-    alert('필수 약관을 모두 동의해주세요.');
-    return;
-  }
-
-  location.href = './join.html';
-}); //terms_required
+},{threshold: 0.5});
+picks.forEach(pick => {
+  observer.observe(pick);
+}) // pick_slide
 ~~~
-</details>
 
 ## 📂 프로젝트 폴더 구조
 
 ```text
-better/
+visit_jeju/
 ├── css/
-│   ├── footer.css
-│   ├── header.css
-│   ├── header.js
-│   ├── main.css
-│   ├── main.js
+│   ├── header.scss
+│   ├── login.scss
+│   ├── main.scss
+│   ├── sub.scss
 ├── images/
-├── login/
-│   ├── css/
-│   ├── images/
-│   ├── js/
-│       ├── login.js
-│       ├── users.json
-│   ├── agreement.html
-│   ├── find_id.html
-│   ├── find_pw.html
-│   ├── join.html
-│   ├── join_complete.html
-│   ├── login.html
+├── js/
+│   ├── header.js
+│   ├── main.js
+│   ├── sub.js
 ├── sub/
-│   ├── css/
-│   ├── images/
-│   ├── img_detail/
-│   ├── cart.html
-│   ├── detail.html
-│   ├── history.html
+│   ├── login.html
 │   ├── sub.html
 └── index.html
 ```
 
 ## 📝 프로젝트 회고
 
-이번 프로젝트를 통해 정적인 화면 구현을 넘어 JavaScript와 jQuery를 활용한 사용자 인터랙션 및 데이터 처리 경험을 쌓았습니다.
+이번 프로젝트를 통해 기획한 디자인을 실제 웹 화면으로 구현하고, 반응형 레이아웃과 다양한 인터랙션을 적용하며 사용자 경험을 고려한 웹 개발 과정을 경험했습니다. 특히 기기별 콘텐츠 배치와 기능에 적합한 구현 방식을 고민하며, 같은 정보라도 화면 환경에 따라 전달 방식이 달라질 수 있다는 점을 배웠습니다.
 
-`fetch()`, `find()`, `localStorage`를 활용하며 데이터 탐색과 브라우저 저장 방식에 대한 이해를 넓혔습니다.  
-앞으로는 공통 기능의 재사용성을 높이고 반응형 레이아웃과 웹 접근성을 고려해 유지보수하기 좋은 웹사이트를 구현할 수 있도록 개발 역량을 키워 나가겠습니다.
+앞으로는 사용자가 필요한 정보를 더욱 직관적으로 탐색할 수 있도록 콘텐츠 구조와 UI의 연결성을 고민하며, 다양한 사용자 환경에 대응할 수 있는 웹 구현 능력을 발전시켜 나가겠습니다.
