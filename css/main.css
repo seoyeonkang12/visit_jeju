@@ -1312,9 +1312,9 @@ body {
   .path .course_box .sheet_box .sheet {
     margin-bottom: 0;
     position: absolute;
-    width: 85%;
-    top: 25%;
-    left: 7.5%;
+    width: 90%;
+    top: 30%;
+    left: 5%;
   }
   .path .course_box .sheet_box .sheet .close {
     position: absolute;
@@ -1761,7 +1761,7 @@ body {
   }
   .path .course_box .sheet_box .sheet {
     width: 80%;
-    top: 20%;
+    top: 25%;
     left: 10%;
   }
   .path .course_box .sheet_box .sheet .close img {

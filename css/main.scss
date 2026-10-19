@@ -1327,8 +1327,8 @@ $white: #fff;
         .sheet {
           margin-bottom: 0;
           position: absolute;
-          width: 85%;
-          top: calc((100% - 50%)/2); left: calc((100% - 85%)/2);
+          width: 90%;
+          top: calc((100% - 40%)/2); left: calc((100% - 90%)/2);
 
           .close {
             position: absolute;
@@ -1808,7 +1808,7 @@ $white: #fff;
 
         .sheet {
           width: 80%;
-          top: calc((100% - 60%)/2); left: calc((100% - 80%)/2);
+          top: calc((100% - 50%)/2); left: calc((100% - 80%)/2);
 
           .close {
             img {
@@ -2047,7 +2047,7 @@ $white: #fff;
           span {
             font-size: 0.9rem;
           }
-        }}
+        }
         &:last-child {margin-right: 0;}
         &:hover {
           .img_box {

@@ -2,7 +2,7 @@ $(function(){
   let swiper = new Swiper('.mySwiper', {
     loop: true,
     slidesPerView: 'auto',
-    intialSlide: 0,
+    initialSlide: 0,
     spaceBetween: 0,
     speed: 2000,
     autoplay: {
