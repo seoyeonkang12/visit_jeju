@@ -502,10 +502,6 @@ body {
   color: #468432;
 }
 
-.weather_outer {
-  display: none;
-}
-
 /******************** tablet ********************/
 @media all and (min-width: 601px) {
   .header {

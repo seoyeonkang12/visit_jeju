@@ -258,7 +258,6 @@ $white: #fff;
       .txt {
         p {
           border-radius: 30px;
-          // line-height: 34px;
           text-align: center;
           margin-bottom: 10px;
           font-weight: 500;
@@ -769,12 +768,6 @@ $white: #fff;
         color: $white;
         margin-bottom: 8px;
       }
-      // p {
-      //   font-size: 1.1rem;
-      //   color: $white;
-      //   font-weight: 500;
-      //   margin-bottom: 25px;
-      // }
       .txt {
         margin-bottom: 30px;
         span{
@@ -942,10 +935,6 @@ $white: #fff;
     }
   }
 } //video
-// @keyframes video_rolling  {
-//   0% {transform: translateX(0);}
-//   100% {transform: translateX(-50%);}
-// }
 
 /******************** footer ********************/
 @keyframes f_rolling {
@@ -1029,9 +1018,6 @@ $white: #fff;
         width: 130px;
         margin-right: 15px;
       }
-      // .f_jeju {
-      //   width: 120px;
-      // }
     }
     p {
       font-size: 0.8rem;
@@ -1331,15 +1317,18 @@ $white: #fff;
         background-color: rgba(0, 0, 0, 0.5);
         width: 100%; height: 100vh;
         display: none;
-        position: absolute;
+        position: fixed;
         top: 0; left: 0;
-        z-index: 1;
+        box-sizing: border-box;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        z-index: 99;
 
         .sheet {
           margin-bottom: 0;
           position: absolute;
-          width: 90%;
-          top: calc((100% - 50%)/2); left: calc((100% - 90%)/2);
+          width: 85%;
+          top: calc((100% - 50%)/2); left: calc((100% - 85%)/2);
 
           .close {
             position: absolute;
@@ -1445,9 +1434,6 @@ $white: #fff;
             width: 150px;
             margin-right: 20px;
           }
-          // .f_jeju {
-          //   width: 140px;
-          // }
         }
         p {
           font-size: 1rem;
@@ -2061,12 +2047,7 @@ $white: #fff;
           span {
             font-size: 0.9rem;
           }
-        }
-        // label {
-        //   img {
-        //     @include size(20px, 20px);
-        //   }
-        // }
+        }}
         &:last-child {margin-right: 0;}
         &:hover {
           .img_box {
@@ -2240,8 +2221,8 @@ $white: #fff;
           height: 100%;
 
           .sheet {
-            width: 50%;
-            top: calc((100% - 50%)/2); left: calc((100% - 50%)/2);
+            width: 45%;
+            top: calc((100% - 50%)/2); left: calc((100% - 45%)/2);
           }
         } //sheet_box
       } //course_box
@@ -2265,7 +2246,6 @@ $white: #fff;
     } //video
     .video_box {
       cursor: grab;
-      // animation: video_rolling 15s linear infinite;
       label {
         flex: 0 0 19%;
       }

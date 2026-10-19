@@ -23,7 +23,6 @@
 </head>
 <body>
   <input type="checkbox" id="search">
-  <input type="checkbox" id="chk_sun">
   <input type="checkbox" id="chk_gnb">
   <input type="checkbox" id="chk_lang">
   <input type="checkbox" id="chk_size">
@@ -76,10 +75,10 @@
         <label for="search" class="search_box">
           <div class="icon"><img src="../images/search.png" alt="search_icon"></div>
         </label>
-        <label for="chk_sun" class="weather_box">
+        <div class="weather_box">
           <div class="weather"><img src="../images/sun.png" alt="weather_icon"></div>
           <span>27º</span>
-        </label>
+        </div>
         <label for="chk_gnb" class="btn_gnb"><img src="../images/menu.png" alt="menu_icon"></label>
         <div class="user"><a href="./login.html"><img src="../images/user.png" alt="user_icon"></a></div>
         <label for="chk_lang" class="lang"><img src="../images/lang.png" alt="lang_icon">
@@ -114,67 +113,6 @@
       <div class="btn01"><a href="#!">#비오는 날</a></div>
     </div>
   </div><!--search_popup-->
-  <div class="weather_outer">
-    <div class="weather_popup">
-      <div class="t_weather">
-        <label label for="chk_sun" class="close"><img src="../images/close.png" alt="close_icon"></label>
-        <div class="top">
-          <div class="weather_img"><img src="../images/sun_b.png" alt="weather_icon"></div>
-          <p>27º</p>
-          <span>흐림</span>
-        </div>
-        <div class="bot">
-          <span>32º</span>
-          <span>25º</span>
-          <span>미세먼지 좋음</span>
-        </div>
-      </div><!--t-weather-->
-      <div class="b_weather">
-        <div class="centre"><a href="#!">기상청 보러가기</a></div>
-        <div class="sky01">
-          <div class="cal">
-            <p>내일</p>
-            <p>07/02</p>
-          </div>
-          <span>소나기</span>
-          <div class="tem">
-            <span>31º</span>
-            <span>22º</span>
-          </div>
-        </div>
-        <div class="sky01">
-          <div class="cal">
-            <p>모레</p>
-            <p>07/03</p>
-          </div>
-          <span>소나기</span>
-          <div class="tem">
-            <span>31º</span>
-            <span>23º</span>
-          </div>
-        </div>
-        <p>해양지수</p>
-        <div class="ocean">
-          <div class="ocean01">
-            <img src="" alt="">
-            <p>제주시</p>
-            <span>파고</span>
-            <span>0m</span>
-            <span>수온</span>
-            <span>15º</span>
-          </div>
-          <div class="ocean01">
-            <img src="" alt="">
-            <p>제주시</p>
-            <span>파고</span>
-            <span>0m</span>
-            <span>파주기</span>
-            <span>0.0s</span>
-          </div>
-        </div>
-      </div><!--b-weahter-->
-    </div>
-  </div><!--weather_outer-->
   <input type="checkbox" id="btn_login">
   <input type="radio" name="menu" id="menu_tab01">
   <input type="radio" name="menu" id="menu_tab02">
@@ -278,13 +216,11 @@
     </div><!--menu_box-->
   </div><!--gnb_mobile-->
 
-  <!-- <input type="checkbox" id="bread"> -->
   <div class="breadcrum">
     <div class="home"><a href="../index.html"><i class="fa-solid fa-house"></i></a></div>
     <div class="bread">
       제주놀멍
       <i class="fa-solid fa-caret-down"></i>
-      <!-- <i class="fa-solid fa-chevron-down"></i> -->
       <ul class="bread_box">
         <li><a href="#!">제주놀멍</a></li>
         <li><a href="#!">AI추천</a></li>
@@ -296,9 +232,6 @@
     <div class="line"></div>
     <span>지금제주는</span>
   </div><!--breadcrum-->
-
-  <!-- <input type="checkbox" id="filter"> -->
-  <!-- <input type="checkbox" id="clear"> -->
 
   <input type="checkbox" id="tab01-1">
   <input type="checkbox" id="tab01-2">
@@ -670,7 +603,6 @@
     </div><!--event_box-->
     <div class="more_btn">더보기</div>
     <div class="btns">
-      <!-- <label for="fold" class="fold_btn">접기</label> -->
     </div>
   </section><!--sub-->
   <div class="footer_outer">

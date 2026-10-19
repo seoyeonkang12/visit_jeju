@@ -29,7 +29,6 @@
 </head>
 <body>
   <input type="checkbox" id="search">
-  <input type="checkbox" id="chk_sun">
   <input type="checkbox" id="chk_gnb">
   <input type="checkbox" id="chk_lang">
   <input type="checkbox" id="chk_size">
@@ -82,10 +81,10 @@
         <label for="search" class="search_box">
           <div class="icon"><img src="./images/search.png" alt="search_icon"></div>
         </label>
-        <label for="chk_sun" class="weather_box">
+        <div class="weather_box">
           <div class="weather"><img src="./images/sun.png" alt="weather_icon"></div>
           <span>27º</span>
-        </label>
+        </div>
         <label for="chk_gnb" class="btn_gnb"><img src="./images/menu.png" alt="menu_icon"></label>
         <div class="user"><a href="./sub/login.html"><img src="./images/user.png" alt="user_icon"></a></div>
         <div class="lang"><img src="./images/lang.png" alt="lang_icon">
@@ -120,69 +119,6 @@
       <div class="btn01"><a href="#!">#비오는 날</a></div>
     </div>
   </div><!--search_popup-->
-  <div class="weather_outer">
-    <div class="weather_popup">
-      <div class="t_weather">
-        <label label for="chk_sun" class="close"><img src="./images/close.png" alt="close_icon"></label>
-        <div class="top">
-          <div class="weather_img"><img src="./images/sun_b.png" alt="weather_icon"></div>
-          <p>27º</p>
-          <span>흐림</span>
-        </div>
-        <div class="bot">
-          <span>32º</span>
-          <span>25º</span>
-          <span>미세먼지 좋음</span>
-        </div>
-      </div><!--t-weather-->
-      <div class="b_weather">
-        <div class="centre"><a href="#!">기상청 보러가기</a></div>
-        <div class="sky01">
-          <div class="cal">
-            <p>내일</p>
-            <p>07/02</p>
-          </div>
-          <!-- <img src="./images/rain.png" alt="rain_img"> -->
-          <span>소나기</span>
-          <div class="tem">
-            <span>31º</span>
-            <span>22º</span>
-          </div>
-        </div>
-        <div class="sky01">
-          <div class="cal">
-            <p>모레</p>
-            <p>07/03</p>
-          </div>
-          <!-- <img src="./images/rain.png" alt="rain_img"> -->
-          <span>소나기</span>
-          <div class="tem">
-            <span>31º</span>
-            <span>23º</span>
-          </div>
-        </div>
-        <p>해양지수</p>
-        <div class="ocean">
-          <div class="ocean01">
-            <img src="./images/" alt="">
-            <p>제주시</p>
-            <span>파고</span>
-            <span>0m</span>
-            <span>수온</span>
-            <span>15º</span>
-          </div>
-          <div class="ocean01">
-            <img src="./images/" alt="">
-            <p>제주시</p>
-            <span>파고</span>
-            <span>0m</span>
-            <span>파주기</span>
-            <span>0.0s</span>
-          </div>
-        </div>
-      </div><!--b-weahter-->
-    </div>
-  </div><!--weather_outer-->
   <input type="checkbox" id="btn_login">
   <input type="radio" name="menu" id="menu_tab01">
   <input type="radio" name="menu" id="menu_tab02">
@@ -841,7 +777,6 @@
           <div class="sheet01 sheet">
             <label for="chk_map01" class="close"><img src="./images/close.png" alt="close_icon"></label>
             <img src="./images/path_course01.jpg" alt="course_img">
-            <!-- <p><strong>코스안내</strong><br>천아숲길 입구 - 임도삼거리 - 노로오름 삼거리 - 보림농장 삼거리</p> -->
           </div>
         </div>
         <div class="course02 course">
@@ -856,7 +791,6 @@
           <div class="sheet02 sheet">
             <label for="chk_map02" class="close"><img src="./images/close.png" alt="close_icon"></label>
             <img src="./images/path_course02.jpg" alt="course_img">
-            <!-- <p><strong>코스안내</strong><br>보림농장 삼거리 - 돌오름 삼거리 - 표고재베 삼거리 - 용바위 - 서귀포자연휴양림 입구</p> -->
           </div>
         </div>
         <div class="course03 course">
@@ -871,7 +805,6 @@
           <div class="sheet03 sheet">
             <label for="chk_map03" class="close"><img src="./images/close.png" alt="close_icon"></label>
             <img src="./images/path_course03.jpg" alt="course_img">
-            <!-- <p><strong>코스안내</strong><br>서귀포자연휴양림 입구 - 도순천 - 무오법정사</p> -->
           </div>
         </div>
         <div class="course04 course">
@@ -886,7 +819,6 @@
           <div class="sheet04 sheet">
             <label for="chk_map04" class="close"><img src="./images/close.png" alt="close_icon"></label>
             <img src="./images/path_course04.jpg" alt="course_img">
-            <!-- <p><strong>코스안내</strong><br>무오법정사 - 어점이악 삼거리 - 시오름 삼거리 - 돈내코탐방로</p> -->
           </div>
         </div>
       </div>

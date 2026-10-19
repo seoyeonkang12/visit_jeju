@@ -113,12 +113,6 @@ $white: #fff;
   }
 } //breadcrum
 
-
-// #bread {display: none;}
-// #bread:checked ~ .breadcrum .bread .bread_box {display: block;}
-// #bread ~ .breadcrum .bread .bread_box {display: none;}
-
-
 /******************** sub ********************/
 .sub {
   margin: 0 10px 50px;
@@ -181,7 +175,6 @@ $white: #fff;
     } //filter
   }
   .filter_outer {
-    // display: none;
     height: 0;
     opacity: 0;
     overflow: hidden; 
@@ -382,7 +375,6 @@ $white: #fff;
         } //txt
       } //event01 ~ event08
       &.bot {
-        // display: none;
         max-height: 0;
         overflow: hidden;
         transition: all 0.3s;
@@ -620,9 +612,6 @@ $white: #fff;
         width: 130px;
         margin-right: 15px;
       }
-      // .f_jeju {
-      //   width: 120px;
-      // }
     }
     p {
       font-size: 0.8rem;
@@ -844,9 +833,6 @@ $white: #fff;
             width: 150px;
             margin-right: 20px;
           }
-          // .f_jeju {
-          //   width: 140px;
-          // }
         }
         p {
           font-size: 1rem;
