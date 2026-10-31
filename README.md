@@ -38,21 +38,21 @@ Visit Jeju는 제주도의 관광 정보와 여행 콘텐츠를 직관적으로 
 - PC·태블릿·모바일 환경에 맞춘 레이아웃 구성
 - 디바이스별 콘텐츠 배치 및 가독성 최적화
 
-<!-- PC·태블릿·모바일 화면 캡처 이미지 삽입 -->
+https://github.com/user-attachments/assets/d74eec62-406d-434b-b862-2219626508a3
 
 ### 2. AI 추천 콘텐츠 레이아웃
 
 - 모바일 환경에 맞춘 AI 추천 콘텐츠 레이아웃 재구성
 - 화면 크기에 따른 콘텐츠 구조 전환
 
-<!-- PC·태블릿과 모바일 AI 추천 화면 비교 이미지 삽입 -->
+https://github.com/user-attachments/assets/e826ecf7-0098-4987-b659-f4533331371c
 
 ### 3. 오름길 코스 아코디언 UI
 
 - 코스 선택 시 해당 지도 영역이 펼쳐지는 인터랙션 구현
 - 모바일 화면 공간을 고려한 선택형 콘텐츠 구성
 
-<!-- 코스 선택 전후 동작 GIF 삽입 -->
+https://github.com/user-attachments/assets/dd89e18d-6435-4497-91c8-0297d08d0d29
 
 ### 4. 콘텐츠 인터랙션
 
@@ -60,7 +60,7 @@ Visit Jeju는 제주도의 관광 정보와 여행 콘텐츠를 직관적으로 
 - Swiper 자동 슬라이드 및 페이지네이션
 - `IntersectionObserver`를 활용한 스크롤 진입 애니메이션 구현
 
-<!-- 탭 전환 및 슬라이드 동작 GIF 삽입 -->
+https://github.com/user-attachments/assets/8792dc26-6df0-4476-b94d-a9e7418893a3
 
 ## 💻 핵심 코드 구현
 
